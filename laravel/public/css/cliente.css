@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Patrick Hand', cursive;
+}
+body{
+    background-color: #FDAF75;
+}
+header{
+    transition: 1s ease all;
+    height: 50px;
+    background-color: #F24A72;
+    z-index: 999;
+    overflow: hidden;
+}
+.row{
+    --bs-gutter-x: 0rem !important;
+}
+.scrollheader{
+    background-color: #EAEA7F;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    transition: 1s ease all;
+    animation-name: desplegar;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+   z-index: 50;
+}
+.scrollmargin{
+    width: 100%;
+    height: 150px;
+    /* background-color: purple; */
+}
+#logo{
+    margin-top: 5px;
+    margin-left: 120px;
+    font-family: 'Courgette', cursive !important;
+}
+/* .enlaces{
+    margin-top: 13px;
+} */
+.accionesmenu{
+    margin-top: 13px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+@keyframes desplegar {
+    0%   {height: 0px;}
+    100%  {height: 50px;padding-left: 150px;padding-right: 150px;}
+  }
+
+
+  .carrousel{
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255, 117, 117);
+      z-index: 0;
+  }
+  .tarjeta{
+      width: 70%;
+      height: 400px;
+      background-color: aqua;
+      margin: auto;
+      /* padding-top: 10px; */
+  }
+  .tarjetas{
+      margin-bottom: 150px;
+  }
+  .contenedortarjetas{
+      margin-top: 150px;
+  }
+  .imagentarjetas{
+      width: 100%;
+      height: 100%;
+      background-color: wheat;
+      margin: auto;
+  }
+.secion{
+    width: 100%;
+    height: auto;
+    background-color: #F24A72;
+    margin-bottom: 150px;
+}
+.rowsecion{
+    width: 80%;
+    margin: auto;
+}
+.tarjetassecion{
+    width: 80%;
+    height: 260px;
+    background-color: red;
+    margin: 20px;
+    padding-top: 5px;
+    overflow: hidden;
+    animation-name: encogertarjeta;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    
+}
+.imagen{
+    width: 97%;
+    height: 200px;
+    background-color: white;
+    margin: auto;
+}
+.titulotarjetas{
+    text-align: center;
+    margin-top: 20px;
+}
+.tarjetassecion:hover{
+  
+    transition: 5s ease all; 
+    animation-name: desplegartarjeta;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.textotarjeta{
+    margin: 0px 15px;
+}
+.enlacetarjeta{
+    float: right;
+    margin: 5px 15px;
+    border-style: none;
+    width: 90%;
+    height: 30px;
+}
+@keyframes desplegartarjeta {
+    0%   {height: 260px;}
+    100%  {height: 350px;}
+  }
+  @keyframes encogertarjeta {
+    0%   {height: 350px;}
+    100%  {height: 260px;}
+  }
+  footer{
+      height: 200px;
+      width: 100%;
+      background-color: white;
+  }
+
+
+
+
+
+
+.flecha{
+    width: 300px;
+    position: relative;
+    top: -116px;
+    left: 35%;
+    z-index: 55;
+}
+
+
+  .panelanimado{
+      /* width: 100%; */
+      padding-top: 1px;
+      height: 500px;
+      background-color: cadetblue;
+      margin-top: 150px;
+      overflow: hidden;
+  }
+  .sinaminar{
+    width: 220vh;
+    height: 100%;
+    background-color: #F24A72;
+    background-image: url('patron.jpg');
+    background-size: 200px;
+    margin: auto;
+  }
+  .btnanimado{
+    position: relative;
+    top: -60px;
+    /* left: -50px; */
+    right: 0px;
+    float: right;
+    border-style: none;
+    width: 200px;
+    height: 50px;
+  }
+  .fondobtn{
+    transition: 0.2s ease all;
+      width: 5%;
+      height: 100%;
+      background-color: rgb(153, 51, 51);
+  }
+  .textobtn{
+      position: relative;
+      top: -45px;
+      font-size: 24px;
+  }
+  .btnanimado:hover > .fondobtn{
+    width: 100%;
+    transition: 0.2s ease all;
+  }
+
+  #agrandar{
+      width: 100px;
+      height: 1%;
+      /* background-color: rgb(217, 255, 0); */
+      background-image: url('hamburguesa.jpg');
+      background-position: center;
+      background-size: cover;
+  }
+  .textobanner{
+      padding-top: 50px;
+      margin-left: 17%;
+  }
+  .animacion{
+    animation-name: desplegarboton;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  @keyframes desplegarboton {
+    0%   { right: 0px;}
+    100%  { right: 67%;}
+  }
+  .verde{
+    background-color: green;
+    background-image: url('hamburguesa.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+  }
+  .azul{
+    background-color: blue;
+    background-image: url('hamburguesa.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+.amarillo{
+    background-color: yellow;
+    background-image: url('hamburguesa.jpg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+}
+#btn_menu{
+    z-index: 999;
+    position: relative;
+    display: none;
+}
+.btn_mav{
+    border-style: none;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: 20px;
+    /* border: 1px solid #ccc; */
+    background-color: rgba(255, 255, 255, 0);
+    
+    
+}
+.textonavbtn{
+    position: relative;
+    top: -135px;
+}
+.textonavbtnacciones{
+    position: relative;
+    top: -135px;
+}
+.textobtnanimado{
+    padding-top: 15px;
+}
+
+.btn_mav_animacion{
+    width: 80%;
+    margin: auto;
+     height: 100px;
+     margin-top: 45px; 
+    background-color: #333C83;
+    border-radius: 10px;
+    animation-name: animacionbtnend;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+
+}
+
+.btn_mav:hover > .btn_mav_animacion{
+    animation-name: animacionbtn;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes animacionbtn {
+    0%   { margin-top: 45px; }
+    100%  { margin-top: -45px; }
+  }
+  @keyframes animacionbtnend {
+    0%   { margin-top: -45px; }
+    100%  { margin-top: 45px; }
+  }
+  @media (max-width: 995px) {
+    
+      #logo{
+          margin-top: 10px;
+      }
+    .menuresponsive{
+        display: none;
+        position: fixed;
+        top: 10%;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(54, 54, 54, 0.842);
+        z-index: 999;
+    }
+    #btn_menu{
+        z-index: 999;
+        position: relative;
+        display: block;
+        left: 105px;
+        top: 8px;
+        border-style: none;
+        font-size: 24px;
+        padding: 0px 10px;
+        border-radius: 10px;
+        border: 1px solid #888;
+    }
+    .enlaces_responsive{
+        color: white;
+        margin-top: 15px;
+    }
+    .enlaces_responsive a{
+        color: white;
+        
+    }
+    .enlaces{
+        display:none;
+    }
+  }
+@media (max-width: 600px) {
+    .textonavbtn{
+        font-size: 16px;
+    }
+    #logo{
+        margin-left: 10px;
+        font-size: 30px;
+        margin-top: 10px;
+    }
+    .tarjetas{
+        margin-bottom: 50px;
+    }
+    .contenedortarjetas{
+        margin-top: 50px;
+    }
+    .panelanimado{
+        display: none;
+    }
+        a h5{
+            font-size: 14px;
+        }
+        a h2{
+            font-size: 16px;
+        }
+        .menuresponsive{
+            display: none;
+            position: fixed;
+            top: 10%;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(54, 54, 54, 0.842);
+            z-index: 999;
+        }
+        #btn_menu{
+            z-index: 999;
+            position: relative;
+            display: block;
+            left: 35px;
+            top: 8px;
+            border-style: none;
+            font-size: 24px;
+            padding: 0px 10px;
+            border-radius: 10px;
+            border: 1px solid #888;
+        }
+        .enlaces{
+            display:none;
+        }
+        .enlaces_responsive{
+            color: white;
+            margin-top: 15px;
+        }
+        .enlaces_responsive a{
+            color: white;
+            
+        }
+        header{
+            width: 100%;
+        }
+        .accionesmenu h5{
+            font-size: 13px !important;
+        }
+        @keyframes desplegar {
+            0%   {height: 0px;}
+            100%  {height: 50px;padding-left: 0px;padding-right: 0px;}
+          }
+    }
+    #fondosesion{
+        display: none;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.671);
+        z-index: 999;
+    }
+    .tarjetalogin{
+        width: 40%;
+        height: auto;
+        margin-top: 5vh;
+        background-color: #EAEA7F;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .controlsesion{
+        width: 100%;
+        height: 50px;
+        border-style: none;
+        background-color: #FDAF75;
+        font-size: 20px;
+        transition: all ease 0.5s;
+        
+    }
+    .controlsesion:first-child{
+        border-right: 3px solid #c75600;
+    }
+    .controlsesion:last-child{
+        border-left: 3px solid #c75600;
+    }
+    .controlsesion:hover{
+        width: 100%;
+        height: 50px;
+        border-style: none;
+        background-color: #ff9c51;
+        transition: all ease 0.5s;
+    }
+    .textocontrolsesion{
+        margin-top: 10px;
+        font-size: 20px;
+        transition: all ease 0.5s;
+    }
+    .controlsesion:hover > .textocontrolsesion{
+        font-size: 34px;
+        margin-top: 0px;
+        transition: all ease 0.5s;
+            transform: rotatez(20deg);
+    }
+    .formulariossesion{
+        width: 80%;
+        background-color: #fdb07500;
+        margin-top: 30px;
+        border: 2px solid #c75600;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 20px;
+    }
+    .submitformulariosesion{
+        float: right;
+        margin-right: 54px;
+        border-style: none;
+        background-color: #FDAF75;
+        font-size: 20px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        width: 150px;
+        height: 35px;
+    }
+    #salirbtn{
+        background-color: #fd7575 !important;
+    }
