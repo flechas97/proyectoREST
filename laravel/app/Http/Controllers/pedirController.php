@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class pedirController extends Controller
 {
     public function index(){
-        $productos = productos::all();
+        $productos = DB::select(DB::raw('select * from productos where borrado = 0'));
         //dd($productos);
         return view('pedir',['productos'=>$productos]);
     }
