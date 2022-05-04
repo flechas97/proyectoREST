@@ -25,7 +25,7 @@
                     <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Enlace</p> </div> <p class="textonavbtn">Enlace</p>  </button></a>
                     </div>
                     <div class="col-2 enlaces">
-                    <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Enlace</p> </div> <p class="textonavbtn">Enlace</p>  </button></a>
+                    <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Mis Pedidos</p> </div> <p class="textonavbtn">Mis Pedidos</p>  </button></a>
                     </div>
                     <div class="col-2 enlaces">
                     <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Enlace</p> </div> <p class="textonavbtn">Enlace</p>  </button></a>
@@ -48,9 +48,11 @@
                     <button id="iniciarses" class="btn_mav"><div class="btn_mav_animacion btn_mav_animacion_acciones"><p class="textobtnanimado">Iniciar</p> </div> <p class="textonavbtn textonavbtnacciones">Iniciar sesion</p>  </button>
                     @endif
                     </div>
+                    @if(session()->get('user'))
                     <div class="col-6">
                     <a href="{{route('empezar_pedido')}}"> <button class="btn_mav"><div class="btn_mav_animacion btn_mav_animacion_acciones"><p class="textobtnanimado">Pedir</p> </div> <p class="textonavbtn textonavbtnacciones">Hacer pedido</p>  </button></a>
                     </div>
+                    @endif
                 </div>
             </div>
             <div class="menuresponsive" id="menu_responsive">
@@ -126,7 +128,7 @@
     </footer>
 
     
-<script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/scroll.js"></script>
     <script src="js/menuresponsivecliente.js"></script>
 

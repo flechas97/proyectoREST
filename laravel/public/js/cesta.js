@@ -261,11 +261,14 @@ calculartotal()
 function calculartotal() {
     var total = 0;
     var totalcesta = document.getElementById('totalcesta')
+    var totaltotal = document.getElementById('total')
     for (let i = 0; i < localStorage.length; i++) {
         var productototal = JSON.parse(localStorage.getItem(localStorage.key(i)));
         total += parseFloat(productototal[1])*parseFloat(productototal[2]);
         console.log(total)
     }
     totalcesta.innerHTML = total+"€";
+    totaltotal.value = total;
+
 }
 

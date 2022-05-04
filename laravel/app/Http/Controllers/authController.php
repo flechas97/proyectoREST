@@ -47,7 +47,7 @@ class authController extends Controller
     public function logout(){
         Auth::logout();
         session()->flush();
-        return redirect()->back();
+        return redirect()->route('client');
     }
 
     public function singin(Request $request){

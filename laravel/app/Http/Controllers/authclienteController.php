@@ -16,7 +16,7 @@ class authclienteController extends Controller
             $sql = 'SELECT * FROM users where email= "'.$request->email.'"';
             $products = DB::select($sql);
             //dd($products[0]->name);
-            session(['user' => $products[0]->name]);
+            session(['user' => $products[0]->name, 'id_user' => $products[0]->id]);
            
             return redirect('/cliente');
         }

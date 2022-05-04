@@ -101,11 +101,13 @@ Route::post('/imprimir', [imprimirController::class, 'imprimir'])->name('imprimi
 
 Route::get('/sugerencias', [sugerenciasController::class, 'index'])->name('sugerencias');
 
-Route::view('/cliente', "/cliente");
+Route::view('/cliente', "/cliente")->name('client');
 Route::post('/cliente/login', [authclienteController::class, 'logincliente'])->name('logincliente');
 
-Route::view('/pedir', "/pedir");
-Route::get('/pedir', [pedirController::class, 'index'])->name('empezar_pedido');
-Route::post('/pedir', [pedirController::class, 'mandar'])->name('mandar_pedido');
+Route::view('/pedir', "/pedir")->middleware('auth');
+Route::get('/pedir', [pedirController::class, 'index'])->name('empezar_pedido')->middleware('auth');
+Route::post('/pedir', [pedirController::class, 'mandar'])->name('mandar_pedido')->middleware('auth');
+
+Route::view('/pedircompletado', "/pedircompletado")->middleware('auth');
 
 Route::get('/imagenes/{id}', [pedirController::class, 'imagen'])->name('imagen');
