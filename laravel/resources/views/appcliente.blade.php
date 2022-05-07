@@ -42,10 +42,10 @@
                     @if(session()->get('user'))
                     <form action="{{route('registrar-out')}}" method="post">
                                 @csrf
-                    <button id="iniciarses" class="btn_mav"><div class="btn_mav_animacion btn_mav_animacion_acciones"><p class="textobtnanimado">Cerrar sesion</p> </div> <p class="textonavbtn textonavbtnacciones">Bienvenido: {{session()->get('user')}}</p></button>
+                    <a href=""></a><button id="iniciarses" class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Cerrar sesion</p> </div> <p class="textonavbtn textonavbtnacciones">Bienvenido: {{session()->get('user')}}</p></button>
                     </form>
                     @else
-                    <button id="iniciarses" class="btn_mav"><div class="btn_mav_animacion btn_mav_animacion_acciones"><p class="textobtnanimado">Iniciar</p> </div> <p class="textonavbtn textonavbtnacciones">Iniciar sesion</p>  </button>
+                    <a href=""></a><button id="iniciarses" class="btn_mav"><div class="btn_mav_animacionini"><p class="textobtnanimado">Iniciar</p></div><p class="textonavbtn textonavbtnacciones">Iniciar sesion</p></button>
                     @endif
                     </div>
                     @if(session()->get('user'))

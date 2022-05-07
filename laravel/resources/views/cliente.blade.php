@@ -29,7 +29,7 @@
 @endif
 
     <div id="scrollmargin"></div>
-    <div class="carrousel mb-4">
+    <div class="carrousel ">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -61,21 +61,24 @@
 <div class="panelanimado" id="panelanimar">
     <div class="sinaminar" id= "sinanimar">
         <div id="agrandar">
-            <h1 class="textobanner text-light">OFERTON DEL COPON</h1>
-            <h5 class="text-light textobanner"> Oferta Valida Hoy</h5>
+            <h1 class="textobanner text-light">Ve la champions Con nosotros</h1>
+            <!-- <h5 class="text-light textobanner"> Todos los partidos</h5> -->
         </div>
         <!-- <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, recusandae!</h1> -->
     </div>
     <img class= "flecha" src="css/flecha.png" alt="">
-    <button class="btnanimado" id="btnanimado"><div class="fondobtn"></div> <p class="textobtn">Adquirir oferta</p></button>
+    <button class="btnanimado" id="btnanimado"><div class="fondobtn"></div> <p class="textobtn">Horarios</p></button>
 </div>
 
     <div class="row contenedortarjetas">
         <div class="col-12 col-lg-7 order-1 tarjetas">
             <div class="tarjeta">
-                <div class="imagentarjetas">
-                    IMAGEN
-                </div>
+                <div class="imagentarjetas"></div>
+                <h2 class="titulotarjeta">Los mejores platos</h2>
+                <p class="textotarjeta">
+                    Consigue los mejores precios! Solo con la App
+                </p>
+                <button class="btntarjeta">Pedir</button>
             </div>
         </div>
         <div class="col-12 col-lg-5 order-2 tarjetas">
