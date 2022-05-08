@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- CSS only -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    @yield('css')
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/cliente.css">
-    @yield('css')
     <title>Document</title>
 </head>
 <body>
@@ -22,16 +22,14 @@
                     <button id="btn_menu"><i class="bi bi-list"></i></button>
                 </div>
                     <div class="col-2 enlaces">
-                    <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Enlace</p> </div> <p class="textonavbtn">Enlace</p>  </button></a>
+                        <a href=""> <button class="btn_mav">Enlace</button></a>                    </div>
+                    <div class="col-2 enlaces">
+                    <a href="{{route('mispedidos')}}"> <button class="btn_mav">Mis Pedidos</button></a>
                     </div>
                     <div class="col-2 enlaces">
-                    <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Mis Pedidos</p> </div> <p class="textonavbtn">Mis Pedidos</p>  </button></a>
-                    </div>
+                        <a href=""> <button class="btn_mav">Enlace</button></a>                    </div>
                     <div class="col-2 enlaces">
-                    <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Enlace</p> </div> <p class="textonavbtn">Enlace</p>  </button></a>
-                    </div>
-                    <div class="col-2 enlaces">
-                    <a href=""> <button class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Enlace</p> </div> <p class="textonavbtn">Enlace</p>  </button></a>
+                    <a href=""> <button class="btn_mav">Enlace</button></a>
                     </div>
             </div>
         </div>
@@ -42,15 +40,16 @@
                     @if(session()->get('user'))
                     <form action="{{route('registrar-out')}}" method="post">
                                 @csrf
-                    <a href=""></a><button id="iniciarses" class="btn_mav"><div class="btn_mav_animacion"><p class="textobtnanimado">Cerrar sesion</p> </div> <p class="textonavbtn textonavbtnacciones">Bienvenido: {{session()->get('user')}}</p></button>
+                   <button id="iniciarses" class="btn_mav">Cerrar sesion</button>
+                   <p class="usuario">Usuario: {{session()->get('user')}}</p>
                     </form>
                     @else
-                    <a href=""></a><button id="iniciarses" class="btn_mav"><div class="btn_mav_animacionini"><p class="textobtnanimado">Iniciar</p></div><p class="textonavbtn textonavbtnacciones">Iniciar sesion</p></button>
+                   <button id="iniciarses" class="btn_mav">Iniciar sesion</button>
                     @endif
                     </div>
                     @if(session()->get('user'))
                     <div class="col-6">
-                    <a href="{{route('empezar_pedido')}}"> <button class="btn_mav"><div class="btn_mav_animacion btn_mav_animacion_acciones"><p class="textobtnanimado">Pedir</p> </div> <p class="textonavbtn textonavbtnacciones">Hacer pedido</p>  </button></a>
+                    <a href="{{route('empezar_pedido')}}"><button class="btn_mav importante">Hacer pedido</button></a>
                     </div>
                     @endif
                 </div>

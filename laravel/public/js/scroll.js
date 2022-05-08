@@ -8,7 +8,7 @@ var textonavbtn = document.getElementsByClassName("textonavbtn");
 sinanimar.style.width = screen.width+"px";
 panelanimar.style.width = "0px";
 window.onscroll = function() {
-     console.log("Vertical: " + window.scrollY);
+    //  console.log("Vertical: " + window.scrollY);
     // console.log("Horizontal: " + window.scrollX);
     
     if(parseInt(panelanimar.style.width) < 100){
@@ -30,7 +30,7 @@ window.onscroll = function() {
 
     agrandar.style.width = "100%";
     agrandar.style.height = "85%";
-    console.log(agrandar.style.height)
+    // console.log(agrandar.style.height)
     if(parseInt(window.scrollY/11) < 85){
       agrandar.style.height = parseInt(window.scrollY/11)+"%";
     }
@@ -38,14 +38,14 @@ window.onscroll = function() {
   if(window.scrollY > 50 ){
     //console.log("ha scroleado")
     header[0].classList.add("scrollheader");
-    scrollmargin.classList.add("scrollmargin");
+    // scrollmargin.classList.add("scrollmargin");
 
     for (let i = 0; i < textonavbtn.length; i++) {
       textonavbtn[i].style.color = "black";
     }
   }else{
     header[0].classList.remove("scrollheader");
-    scrollmargin.classList.remove("scrollmargin");
+    // scrollmargin.classList.remove("scrollmargin");
     for (let i = 0; i < textonavbtn.length; i++) {
       textonavbtn[i].style.color = "white";
       

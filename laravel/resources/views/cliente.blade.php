@@ -1,6 +1,5 @@
 @extends('appcliente')
 @section('css')
-<link rel="stylesheet" href="css/cliente.css">
 @endsection
 @section('content')
 
@@ -28,36 +27,43 @@
     </div>    
 @endif
 
-    <div id="scrollmargin"></div>
+    <!-- <div id="scrollmargin"></div> -->
     <div class="carrousel ">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
+  {{-- <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
+  </div> --}}
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <div class="verde"></div>
+    <div class="carousel-item active"data-bs-interval="100000">
+        <div class="contenidovideoprin">
+            <h1 class="textovideoprin">Los mejores en lo clasico</h1>
+            <button class="botonvideo">Pedir</button>
+        </div>
+        <video src="{{URL::asset('css/video.mp4')}}" mz-autoplay-scroll="" playsinline="" autoplay="" loop="" mz-always-muted="" muted="" width="100%"></video>
+       
     </div>
-    <div class="carousel-item">
+    {{-- <div class="carousel-item">
       <div class="azul"></div>
     </div>
     <div class="carousel-item">
       <div class="amarillo"></div>
-    </div>
+    </div> --}}
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+  {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
   <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
-  </button>
+  </button> --}}
 </div>
     </div>
-
+<div class="textoanimado">
+    <img src="{{URL::asset('css/textoanimado.png')}}" alt="" class="animar">
+</div>
 <div class="panelanimado" id="panelanimar">
     <div class="sinaminar" id= "sinanimar">
         <div id="agrandar">
@@ -69,6 +75,13 @@
     <img class= "flecha" src="css/flecha.png" alt="">
     <button class="btnanimado" id="btnanimado"><div class="fondobtn"></div> <p class="textobtn">Horarios</p></button>
 </div>
+{{-- <div class="videobanner">
+    <video src="{{URL::asset('css/video.mp4')}}" mz-autoplay-scroll="" playsinline="" autoplay="" loop="" mz-always-muted="" muted="" width="100%"></video>
+    <div class="contenidovideo">
+        <h1 class="textovideo">Premium</h1>
+        <button class="botonvideo">Iniciar pedido</button>
+    </div>
+</div> --}}
 
     <div class="row contenedortarjetas">
         <div class="col-12 col-lg-7 order-1 tarjetas">
@@ -83,17 +96,32 @@
         </div>
         <div class="col-12 col-lg-5 order-2 tarjetas">
              <div class="tarjeta">
-                a
+             <div class="imagentarjetas2"></div>
+             <h2 class="titulotarjeta">Los mejores platos</h2>
+                <p class="textotarjeta">
+                    Consigue los mejores precios! Solo con la App
+                </p>
+                <button class="btntarjeta">Pedir</button>
             </div>
         </div>
         <div class="col-12 col-lg-5 order-4 order-lg-3 tarjetas">
              <div class="tarjeta">
-               a
+             <div class="imagentarjetas2"></div>
+             <h2 class="titulotarjeta">Los mejores platos</h2>
+                <p class="textotarjeta">
+                    Consigue los mejores precios! Solo con la App
+                </p>
+                <button class="btntarjeta">Pedir</button>
             </div>
         </div>
         <div class="col-12 col-lg-7 order-3 order-lg-4 tarjetas">
             <div class="tarjeta">
-                imagen
+            <div class="imagentarjetas"></div>
+                <h2 class="titulotarjeta">Los mejores platos</h2>
+                <p class="textotarjeta">
+                    Consigue los mejores precios! Solo con la App
+                </p>
+                <button class="btntarjeta">Pedir</button>
             </div>
         </div>
     </div>
@@ -159,7 +187,7 @@
                             <input type="text" name="email" id="" class="formulariossesion" placeholder="Email...*">
                         </div>
                         <div class="col-12 text-center">
-                            <input type="text" name="password" id="" class="formulariossesion" placeholder="Contraseña...*">
+                            <input type="password" name="password" id="" class="formulariossesion" placeholder="Contraseña...*">
                         </div>
                         <div class="col-12 text-center">
                             <input type="submit" value="Iniciar" class="submitformulariosesion">
@@ -193,16 +221,12 @@
         </div>
     </div>
     @endsection
-
-
-
-
-    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/scroll.js"></script>
-    <script src="js/menuresponsivecliente.js"></script>
+    <script src="js/menuresponsivecliente.js"></script> -->
 
  
     <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
-</html>
+</html> -->

@@ -10,20 +10,16 @@ class pedirController extends Controller
 {
     public function index(){
         $productos = DB::select(DB::raw('select * from productos where borrado = 0'));
-        //dd($productos);
         return view('pedir',['productos'=>$productos]);
     }
     public function mandar(Request $request ){
-        //dd(count($request->request));
         // $usuario = DB::select(DB::raw('select * from users where id = '.session()->get('id_user')));
-        //  dd($request->request);
         $datos = [];
         foreach ($request->request as $key => $value) {
             array_push($datos,$value);
         }
         DB::insert('insert into pedidos (id_user, estado,total, created_at) values (?, ?, ?, ?)', array(session()->get('id_user'), 0,$request->total,date('Y/m/d')));
         $pedido = DB::select(DB::raw('SELECT MAX(id) AS id FROM pedidos'));
-        // dd($pedido[0]->id);
         for ($i=2; $i < count($datos) ; $i++) { 
             $producto = DB::select(DB::raw('SELECT * FROM productos where nombre="'.$datos[$i].'"'));
             DB::insert('insert into detalles_pedidos (id_pedido, id_producto,cantidad, created_at) values (?, ?, ?, ?)',array($pedido[0]->id, $producto[0]->id,$datos[$i+1],date('Y/m/d')));
@@ -37,6 +33,17 @@ class pedirController extends Controller
         header("Content-type: image/jpg"); 
         echo $data[0]->imagen; 
 
+    }
+
+    public function mispedidos(){
+        $data = DB::select(DB::raw('select * from pedidos where id_user="'.session()->get('id_user').'"'));
+        $total_detalles = [];
+        $productos = DB::table('productos')->get();
+        for ($i=0; $i <count($data) ; $i++) { 
+            $detalles = DB::table('detalles_pedidos')->where('id_pedido',$data[$i]->id)->get();
+            array_push($total_detalles,$detalles);
+        }
+        return view('mispedidos',['datos'=>$data,'detalles'=>$total_detalles,'productos'=>$productos]);
     }
     //
 }

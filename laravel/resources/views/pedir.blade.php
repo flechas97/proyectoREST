@@ -1,5 +1,3 @@
-<?php header("Content-type: image/jpg"); ?>
-
 @extends('appcliente')
 @section('css')
 <link rel="stylesheet" href="css/pedir.css">

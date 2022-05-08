@@ -110,4 +110,9 @@ Route::post('/pedir', [pedirController::class, 'mandar'])->name('mandar_pedido')
 
 Route::view('/pedircompletado', "/pedircompletado")->middleware('auth');
 
+Route::view('/mispedidos', "/mispedidos")->middleware('auth');
+Route::get('/mispedidos', [pedirController::class, 'mispedidos'])->name('mispedidos')->middleware('auth');
+
+
+
 Route::get('/imagenes/{id}', [pedirController::class, 'imagen'])->name('imagen');
