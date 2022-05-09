@@ -59,12 +59,12 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button> --}}
-</div>
-    </div>
+
 <div class="textoanimado">
     <img src="{{URL::asset('css/textoanimado.png')}}" alt="" class="animar">
 </div>
-<div class="panelanimado" id="panelanimar">
+
+{{-- <div class="panelanimado" id="panelanimar">
     <div class="sinaminar" id= "sinanimar">
         <div id="agrandar">
             <h1 class="textobanner text-light">Ve la champions Con nosotros</h1>
@@ -74,7 +74,7 @@
     </div>
     <img class= "flecha" src="css/flecha.png" alt="">
     <button class="btnanimado" id="btnanimado"><div class="fondobtn"></div> <p class="textobtn">Horarios</p></button>
-</div>
+</div> --}}
 {{-- <div class="videobanner">
     <video src="{{URL::asset('css/video.mp4')}}" mz-autoplay-scroll="" playsinline="" autoplay="" loop="" mz-always-muted="" muted="" width="100%"></video>
     <div class="contenidovideo">
@@ -126,6 +126,19 @@
         </div>
     </div>
 
+
+    <section class="tarjetaregalo">
+        <div class="row bannerregalo">
+            <div class="col-lg-6 col-12 col-sm-12 ">
+                <img src="{{URL::asset('css/blob.png')}}" alt="" class="blob">
+            </div>
+            <div class="col-lg-6 col-12 col-sm-12 text-center">
+                    <h1 class="titulotarjetaregalo">Tarjeta regalo</h1>
+                    <p class="textotarjetaregalo">Presenta una tarjeta regalo a tu familia o amigos!</p>
+                    <button class="botontarjetaregalo">Comprar tarjeta regalo</button>
+            </div>
+        </div>
+    </section>
 
     <section class="secion">
         <div class="row justify-content-center rowsecion">

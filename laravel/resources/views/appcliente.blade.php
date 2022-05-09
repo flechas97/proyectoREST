@@ -22,14 +22,14 @@
                     <button id="btn_menu"><i class="bi bi-list"></i></button>
                 </div>
                     <div class="col-2 enlaces">
-                        <a href=""> <button class="btn_mav">Enlace</button></a>                    </div>
+                        <a href=""> <button class="btn_mav">Inicio</button></a>                    </div>
                     <div class="col-2 enlaces">
                     <a href="{{route('mispedidos')}}"> <button class="btn_mav">Mis Pedidos</button></a>
                     </div>
                     <div class="col-2 enlaces">
                         <a href=""> <button class="btn_mav">Enlace</button></a>                    </div>
                     <div class="col-2 enlaces">
-                    <a href=""> <button class="btn_mav">Enlace</button></a>
+                    <a href=""> <button class="btn_mav">Contacto</button></a>
                     </div>
             </div>
         </div>
