@@ -5,9 +5,12 @@
     padding: 0px;
     font-family: 'Patrick Hand', cursive;
 }
-body{
-    background-color: #ffdfc6;
+body {
+background-image: url('pastel.png');
+background-attachment: fixed;
+background-size: 500px;
 }
+
 header{
     transition: 1s ease all;
     height: 75px;
@@ -64,7 +67,7 @@ a{
   .carrousel{
       width: 100%;
       height: 100%;
-      background-color: rgb(255, 117, 117);
+      /* background-color: #ffdfc6; */
       z-index: 0;
   }
   .tarjeta{
