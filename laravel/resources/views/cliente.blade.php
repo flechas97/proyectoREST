@@ -27,7 +27,7 @@
     </div>    
 @endif
 
-    <!-- <div id="scrollmargin"></div> -->
+    <div id="scrollmargin"></div>
     <div class="carrousel ">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   {{-- <div class="carousel-indicators">

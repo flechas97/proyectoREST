@@ -96,33 +96,78 @@
 
 @yield('content')
 <footer>
-        <div class="row justify-content-center">
-            <div class="col-2">
-                <div class="row">
-                    <div class="col-12">
-                        Sobre Restaurante
-                    </div>
-                    <div class="col-12">
-                        Sobre Nosotros
-                    </div>
-                    <div class="col-12">
-                        Sobre Nuestras hubicaciones
-                    </div>
-                    <div class="col-12">
-                        Sobre Nuestra historia
+    <div class="row justify-content-center">
+        <div class="col-lg-2 col-sm-12 my-4">
+            <div class="row">
+                <div class="col-12">
+                    <h4>AYUDA</h4>
+                </div>
+                <div class="col-12">
+                    Preguntas frecuentes
+                </div>
+                <div class="col-12">
+                    Sobre Nuestras hubicaciones
+                </div>
+                <div class="col-12">
+                    Sobre Nuestra historia
+                </div>
+            </div>
+            
+        </div>
+        <div class="col-lg-2 col-sm-12 my-4">
+            <div class="row">
+                <div class="col-12">
+                    <h4>EMPRESA</h4>
+                </div>
+                <div class="col-12">
+                    Sobre Nosotros
+                </div>
+                <div class="col-12">
+                    Sobre Nuestras hubicaciones
+                </div>
+                <div class="col-12">
+                    Sobre Nuestra historia
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-sm-12 my-4">
+            <div class="row">
+                <div class="col-12 my-1">
+                        <h4>Nuestra APP</h4>
+                        <div class="redes">
+                            <img src="{{URL::asset('css/apple.png')}}" alt="" width="180px">
+                            <img src="{{URL::asset('css/android.png')}}" alt="" width="180px">
+                        </div>
+                </div>
+
+                <div class="col-12 my-1">
+                        <h5>Metodos de pago</h5>
+                        <img src="{{URL::asset('css/1.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/2.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/3.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/4.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/5.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/6.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/7.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/8.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/9.svg')}}" alt="" class="pago">
+                        <img src="{{URL::asset('css/10.svg')}}" alt="" class="pago">
+                </div>
+
+                <div class="col-12 my-1">
+                    <h5>Nuestras redes</h5>
+                    <div class="redes">
+                        <i class="bi bi-twitter icoredes"></i>
+                        <i class="bi bi-twitter icoredes"></i>
+                        <i class="bi bi-twitter icoredes"></i>
+                        <i class="bi bi-twitter icoredes"></i>
+                        <i class="bi bi-twitter icoredes"></i>
+                        <i class="bi bi-twitter icoredes"></i>
+                        <i class="bi bi-twitter icoredes"></i>
                     </div>
                 </div>
-                
             </div>
-            <div class="col-2">
-                Nuestros productos y servicios
-            </div>
-            <div class="col-2">
-                Equipo de soporte
-            </div>
-            <div class="col-2">
-                Redes
-            </div>
+        </div>
         </div>
     </footer>
 

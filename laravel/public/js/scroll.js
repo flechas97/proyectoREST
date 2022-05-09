@@ -38,14 +38,14 @@ window.onscroll = function() {
   if(window.scrollY > 50 ){
     //console.log("ha scroleado")
     header[0].classList.add("scrollheader");
-    // scrollmargin.classList.add("scrollmargin");
+     scrollmargin.classList.add("scrollmargin");
 
     for (let i = 0; i < textonavbtn.length; i++) {
       textonavbtn[i].style.color = "black";
     }
   }else{
     header[0].classList.remove("scrollheader");
-    // scrollmargin.classList.remove("scrollmargin");
+    scrollmargin.classList.remove("scrollmargin");
     for (let i = 0; i < textonavbtn.length; i++) {
       textonavbtn[i].style.color = "white";
       
