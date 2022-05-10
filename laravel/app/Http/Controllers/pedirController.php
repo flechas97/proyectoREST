@@ -43,7 +43,7 @@ class pedirController extends Controller
             $detalles = DB::table('detalles_pedidos')->where('id_pedido',$data[$i]->id)->get();
             array_push($total_detalles,$detalles);
         }
-        return view('mispedidos',['datos'=>$data,'detalles'=>$total_detalles,'productos'=>$productos]);
+        return view('cliente',['datos'=>$data,'detalles'=>$total_detalles,'productos'=>$productos]);
     }
     //
 }

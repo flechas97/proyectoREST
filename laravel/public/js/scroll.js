@@ -54,5 +54,58 @@ window.onscroll = function() {
 
   };
 
+
   ScrollReveal({ reset: true }).reveal('.tarjetas', { delay: 300 });
   ScrollReveal({ reset: true }).reveal('.secion', { delay: 300 });
+var zindex = 0;
+  var pedidos_despl = document.getElementById('pedidosdespl')
+  var mis_pedidos  = document.getElementById('mis_pedidos')
+  pedidos_despl.style.transform = 'translateX(-99%)'
+  mis_pedidos.addEventListener('click',()=>{
+    if(pedidos_despl.style.transform == 'translateX(-99%)'){
+      pedidos_despl.style.transform = 'translateX(0%)'
+      pedidos_despl.style.zIndex = zindex
+      zindex++
+    }else{
+      pedidos_despl.style.transform = 'translateX(-99%)'
+    }
+    
+  })
+
+  var btn_sugerencias = document.getElementById('btn_sugerencias');
+  var sugerencias = document.getElementById('sugerencias');
+  sugerencias.style.transform = 'translateX(99%)'
+  btn_sugerencias.addEventListener('click',()=>{
+    if(sugerencias.style.transform == 'translateX(99%)'){
+      sugerencias.style.transform = 'translateX(0%)'
+      sugerencias.style.zIndex = zindex
+      zindex++
+    }else{
+      sugerencias.style.transform = 'translateX(99%)'
+    }
+  })
+
+  var pedidos_despl = document.getElementById('pedidosdespl')
+  var mis_pedidosres  = document.getElementById('mis_pedidosres')
+  var menu_responsive = document.getElementById('menu_responsive')
+  pedidos_despl.style.transform = 'translateX(-99%)'
+  mis_pedidosres.addEventListener('click',()=>{
+    if(pedidos_despl.style.transform == 'translateX(-99%)'){
+      pedidos_despl.style.transform = 'translateX(0%)'
+      menu_responsive.style.display = 'none'
+    }else{
+      pedidos_despl.style.transform = 'translateX(-99%)'
+    }
+  })
+
+  var btn_sugerenciasres = document.getElementById('btn_sugerenciasres');
+  var sugerencias = document.getElementById('sugerencias');
+  sugerencias.style.transform = 'translateX(99%)'
+  btn_sugerenciasres.addEventListener('click',()=>{
+    if(sugerencias.style.transform == 'translateX(99%)'){
+      sugerencias.style.transform = 'translateX(0%)'
+      menu_responsive.style.display = 'none'
+    }else{
+      sugerencias.style.transform = 'translateX(99%)'
+    }
+  })

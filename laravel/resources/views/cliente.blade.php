@@ -1,5 +1,9 @@
 @extends('appcliente')
 @section('css')
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
 @endsection
 @section('content')
 
@@ -83,7 +87,13 @@
     </div>
 </div> --}}
 
-    <div class="row contenedortarjetas">
+<div id="scene">
+  <div data-depth="0" class="fondo2"></div>
+  <div data-depth="1.1"><img src="{{URL::asset('css/hamburguesa.jpg')}}" alt="" class="fondo"></div>
+  <div data-depth="2.0" class="capa">My first Layer!</div>
+</div>
+<!-- <div class="parallax-window" data-parallax="scroll" data-image-src="{{URL::asset('css/hamburguesa.jpg')}}"></div> -->
+    <div class="row contenedortarjetas" data-parallax="scroll" data-image-src="{{URL::asset('css/fondoparallax.jpg')}}">
         <div class="col-12 col-lg-7 order-1 tarjetas">
             <div class="tarjeta">
                 <div class="imagentarjetas"></div>
@@ -104,26 +114,7 @@
                 <button class="btntarjeta">Pedir</button>
             </div>
         </div>
-        <div class="col-12 col-lg-5 order-4 order-lg-3 tarjetas">
-             <div class="tarjeta">
-             <div class="imagentarjetas2"></div>
-             <h2 class="titulotarjeta">Los mejores platos</h2>
-                <p class="textotarjeta">
-                    Consigue los mejores precios! Solo con la App
-                </p>
-                <button class="btntarjeta">Pedir</button>
-            </div>
-        </div>
-        <div class="col-12 col-lg-7 order-3 order-lg-4 tarjetas">
-            <div class="tarjeta">
-            <div class="imagentarjetas"></div>
-                <h2 class="titulotarjeta">Los mejores platos</h2>
-                <p class="textotarjeta">
-                    Consigue los mejores precios! Solo con la App
-                </p>
-                <button class="btntarjeta">Pedir</button>
-            </div>
-        </div>
+
     </div>
 
 
@@ -141,8 +132,8 @@
     </section>
 
     <section class="secion">
-        <div class="row justify-content-center rowsecion">
-            <div class="col-10 col-lg-4">
+        <div class="row justify-content-center rowsecion mt-5">
+            <div class="col-12 col-lg-4">
                 <div class="tarjetassecion">
                     <div class="imagen">
                         imagen
@@ -152,7 +143,7 @@
                     <a href=""><button class="enlacetarjeta">Enlace</button></a>
                 </div>
             </div>
-            <div class="col-10 col-lg-4">
+            <div class="col-12 col-lg-4">
                 <div class="tarjetassecion">
                     <div class="imagen">
                         imagen
@@ -162,7 +153,7 @@
                     <a href=""><button class="enlacetarjeta">Enlace</button></a>
                 </div>
             </div>
-            <div class="col-10 col-lg-4">
+            <div class="col-12 col-lg-4">
                 <div class="tarjetassecion">
                     <div class="imagen">
                         imagen
@@ -232,6 +223,32 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="pedidosdespl">
+    <h1 class="titulopedidos">Pedidos de {{session()->get('user')}}</h1>
+    
+    @foreach ($datos as $pedido)
+        <h1>Id: {{$pedido->id}}  total: {{$pedido->total}}€</h1>
+        @foreach ($detalles as $detalle)
+            @foreach ($detalle as $detallitos)
+                @if ($detallitos->id_pedido == $pedido->id)
+                    <p><b>id detallle : {{$detallitos->id}}</b></p> 
+                    <p>Cantidad : {{$detallitos->cantidad}}</p> 
+                    @foreach ($productos as $producto)
+                        @if ($producto->id == $detallitos->id_producto)
+                            <p>producto nombre {{$producto->nombre}}</p>
+                            <p>Precio del detalle: {{$detallitos->cantidad * $producto->precio}}€</p>
+                        @endif
+                    @endforeach
+                @endif
+            @endforeach
+        @endforeach
+    @endforeach
+    </div>
+
+    <div id="sugerencias">
+
     </div>
     @endsection
     <!-- <script src="https://unpkg.com/scrollreveal"></script>

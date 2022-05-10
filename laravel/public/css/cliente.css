@@ -84,7 +84,9 @@ a{
       margin-bottom: 150px;
   }
   .contenedortarjetas{
-      margin-top: 150px;
+      padding-top: 150px;
+      background-image: url('hamburguesa.jpg');
+      background-attachment: fixed;
   }
   .imagentarjetas{
       width: 100%;
@@ -134,25 +136,21 @@ a{
     margin-bottom: 150px;
 }
 .rowsecion{
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
 .tarjetassecion{
-    width: 80%;
-    height: 360px;
+    width: 90%;
+    height: 500px;
     background-color: white;
     margin: 20px;
     padding-top: 5px;
     overflow: hidden;
     box-shadow: 0px 5px 5px 3px rgba(102, 102, 102, 0.384);
-    /* animation-name: encogertarjeta;
-    animation-duration: 1s;
-    animation-fill-mode: forwards; */
-    
 }
 .imagen{
     width: 97%;
-    height: 200px;
+    height: 300px;
     background-color: white;
     margin: auto;
 }
@@ -314,6 +312,7 @@ a{
                  -5px -5px 13px #ffffff79;
     font-weight: bold;
     font-size: 14px;
+    z-index: 99999999999999;
 }
 @keyframes animacionbtn {
     0%   { margin-top: 45px; }
@@ -626,6 +625,7 @@ a{
   @media (max-width: 1400px) {
     .contenidovideoprin{
          margin-left: 30%; 
+         top: 300px;
     }  
 }
 @media (max-width: 800px) {
@@ -776,4 +776,57 @@ font-size: 20px;
         padding: 10px 15px;
     }
 }
+#scene{
+    width: 100%;
+    height: 500px;
+    background-image: url('hamburguesa.jpg');
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+.fondo{
+    width: 150%;
+    position: relative;
+    right: 20%;
+}
 
+.capa{
+
+    text-align: center;
+    /* display: block; */
+    padding-top: 250px;
+    font-size: 50px;
+    font-weight: bold;
+    color: white;
+    width: 100%;
+    
+}
+.capa2{
+    text-align: center;
+}
+.contenedortarjetas {
+    min-height: 400px;
+    background: transparent;
+}
+#pedidosdespl{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(-99%);
+    transition: 1s ease all;
+    background-color: red;
+    overflow: scroll;
+}
+.titulopedidos{
+    margin-top: 100px;
+}
+#sugerencias{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    transform: translateX(99%);
+    transition: 1s ease all;
+    background-color: green;
+}

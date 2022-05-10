@@ -24,12 +24,14 @@
                     <div class="col-2 enlaces">
                         <a href=""> <button class="btn_mav">Inicio</button></a>                    </div>
                     <div class="col-2 enlaces">
-                    <a href="{{route('mispedidos')}}"> <button class="btn_mav">Mis Pedidos</button></a>
+                    <!-- <a href="{{route('mispedidos')}}">  -->
+                        <button class="btn_mav" id="mis_pedidos">Mis Pedidos</button>
+                    <!-- </a> -->
                     </div>
                     <div class="col-2 enlaces">
                         <a href=""> <button class="btn_mav">Enlace</button></a>                    </div>
                     <div class="col-2 enlaces">
-                    <a href=""> <button class="btn_mav">Contacto</button></a>
+                     <button class="btn_mav" id="btn_sugerencias">Sugerencias</button>
                     </div>
             </div>
         </div>
@@ -60,13 +62,13 @@
                         <a href="" class=""><h5>Enlace</h5></a>
                     </div>
                     <div class="col-12 text-center enlaces_responsive">
-                        <a href="" class=""><h5>Enlace</h5></a>
+                    <button class="btn_mav" id="mis_pedidosres">Mis Pedidos</button>
                     </div>
                     <div class="col-12 text-center enlaces_responsive">
                         <a href="" class=""><h5>Enlace</h5></a>
                     </div>
                     <div class="col-12 text-center enlaces_responsive">
-                        <a href="" class=""><h5>Enlace</h5></a>
+                    <button class="btn_mav" id="btn_sugerenciasres">Sugerencias</button>
                     </div>
                 </div>
             </div>
@@ -175,7 +177,10 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/scroll.js"></script>
     <script src="js/menuresponsivecliente.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+    <script src="js/parallax.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="parallax2/parallax.js"></script>
  
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
