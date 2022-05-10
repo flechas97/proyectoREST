@@ -60,14 +60,14 @@ window.onscroll = function() {
 var zindex = 0;
   var pedidos_despl = document.getElementById('pedidosdespl')
   var mis_pedidos  = document.getElementById('mis_pedidos')
-  pedidos_despl.style.transform = 'translateX(-99%)'
+  pedidos_despl.style.transform = 'translateX(-99.9%)'
   mis_pedidos.addEventListener('click',()=>{
-    if(pedidos_despl.style.transform == 'translateX(-99%)'){
+    if(pedidos_despl.style.transform == 'translateX(-99.9%)'){
       pedidos_despl.style.transform = 'translateX(0%)'
       pedidos_despl.style.zIndex = zindex
       zindex++
     }else{
-      pedidos_despl.style.transform = 'translateX(-99%)'
+      pedidos_despl.style.transform = 'translateX(-99.9%)'
     }
     
   })
@@ -88,13 +88,14 @@ var zindex = 0;
   var pedidos_despl = document.getElementById('pedidosdespl')
   var mis_pedidosres  = document.getElementById('mis_pedidosres')
   var menu_responsive = document.getElementById('menu_responsive')
-  pedidos_despl.style.transform = 'translateX(-99%)'
+  pedidos_despl.style.transform = 'translateX(-99.9%)'
   mis_pedidosres.addEventListener('click',()=>{
-    if(pedidos_despl.style.transform == 'translateX(-99%)'){
+    console.log(pedidos_despl.style.transform)
+    if(pedidos_despl.style.transform == 'translateX(-99.9%)'){
       pedidos_despl.style.transform = 'translateX(0%)'
       menu_responsive.style.display = 'none'
     }else{
-      pedidos_despl.style.transform = 'translateX(-99%)'
+      pedidos_despl.style.transform = 'translateX(-99.9%)'
     }
   })
 

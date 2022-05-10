@@ -102,7 +102,7 @@ Route::post('/imprimir', [imprimirController::class, 'imprimir'])->name('imprimi
 Route::get('/sugerencias', [sugerenciasController::class, 'index'])->name('sugerencias');
 
 Route::view('/cliente', "/cliente")->name('client');
-Route::get('/cliente', [pedirController::class, 'mispedidos'])->name('mispedidos');
+Route::get('/cliente', [pedirController::class, 'mispedidos'])->name('client');
 Route::post('/cliente/login', [authclienteController::class, 'logincliente'])->name('logincliente');
 
 Route::view('/pedir', "/pedir")->middleware('auth');

@@ -25,7 +25,9 @@
                         <a href=""> <button class="btn_mav">Inicio</button></a>                    </div>
                     <div class="col-2 enlaces">
                     <!-- <a href="{{route('mispedidos')}}">  -->
-                        <button class="btn_mav" id="mis_pedidos">Mis Pedidos</button>
+                        @if(session()->get('user'))
+                        {{-- <button class="btn_mav" id="mis_pedidos">Mis Pedidos</button> --}}
+                        @endif
                     <!-- </a> -->
                     </div>
                     <div class="col-2 enlaces">

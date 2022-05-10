@@ -1,10 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
 *{
     margin: 0px;
     padding: 0px;
-    font-family: 'Patrick Hand', cursive;
+    /* font-family: 'Patrick Hand', cursive; */
+    font-family: 'Lora', serif;
 }
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #363636;
+    border-radius: 8px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 8px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 body {
 background-image: url('pastel.png');
 background-attachment: fixed;
@@ -567,9 +590,9 @@ a{
 .animar{
     position: relative;
     right: 0px;
-    background-color: white;
+    /* background-color: white; */
     animation-name: animartexto;
-    animation-duration: 30s;
+    animation-duration: 35s;
     animation-fill-mode: forwards; 
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -810,23 +833,113 @@ font-size: 20px;
 }
 #pedidosdespl{
     position: fixed;
+    margin-top: 50px;
     top: 0;
-    height: 100%;
+    height: 95%;
     width: 100%;
-    transform: translateX(-99%);
+    transform: translateX(-99.9%);
     transition: 1s ease all;
-    background-color: red;
-    overflow: scroll;
+    /* background-color: red; */
+    background-image: url('papel.jpg');
+    background-size: contain;
+    background-position: center;
+    /* overflow: scroll; */
 }
-.titulopedidos{
+
+.subtitulopedido{
+    display: inline;
+}
+.bi-heart-arrow{
+    font-size: 40px;
+   position: relative;
+   top: 7px;
+   margin-right: 10px;
+}
+.detalle_pedido{
+    display: flex;
+    flex-wrap: wrap;
+}
+.contenido_pedido{
+    margin: 0px 50px;
+}
+.cajapedidos{
+    margin-left: 20%;
     margin-top: 100px;
+    height: 700px;
+    overflow-y: scroll;
 }
+
 #sugerencias{
     position: fixed;
     top: 0;
-    height: 100%;
+    margin-top: 50px;
+    height: 95%;
     width: 100%;
     transform: translateX(99%);
     transition: 1s ease all;
-    background-color: green;
+    background-image: url('papel.jpg');
+    background-size: contain;
+    background-position: center;
+    overflow: scroll;
+}
+.abrir_pedidos{
+    /* position: fixed;
+    top: 100px;
+    left: 0px; */
+    position: relative;
+    top: 330PX;
+    left: 50PX;
+    float: right;
+    z-index: 999;
+    transform: translateX(0%);
+    background-color: #bfbfbf00;
+    border-style: none;
+    background-image: url('volverpedido.png');
+    width: 215px;
+    height: 220px;
+}
+@media (max-width: 500px) {
+    #pedidosdespl{
+        position: fixed;
+        margin-top: 50px;
+        top: 0;
+        height: 95%;
+        width: 100%;
+        transform: translateX(-99%);
+        transition: 1s ease all;
+        /* background-color: red; */
+        background-image: url('papel.jpg');
+        background-size: 200% 200%;
+        background-position: left;
+        /* overflow: scroll; */
+    }
+    .cajapedidos{
+        margin-left: 17%;
+        position: relative;
+        top: -100px;
+        height: 500px;
+        width: 300px;
+        overflow-y: scroll;
+    }
+    .abrir_pedidos{
+        /* position: fixed;
+        top: 100px;
+        left: 0px; */
+        position: relative;
+        top: 230PX;
+        left: 30PX;
+        float: right;
+        z-index: 999;
+        transform: translateX(0%);
+        background-color: #bfbfbf00;
+        border-style: none;
+        background-image: url('volverpedido.png');
+        background-size: cover;
+        width: 120px;
+        height: 130px;
+    }
+    .subtitulopedido{
+        display: inline;
+        font-size: 14px;
+    }
 }
