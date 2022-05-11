@@ -236,27 +236,27 @@ var ver_cesta = document.getElementById('ver_cesta');
 ver_cesta.innerHTML = "<i class='bi bi-bag'></i><br>"+ localStorage.length;
 var cesta = document.getElementById('cesta');
 var productos = document.getElementsByClassName("productos")
-cesta.style.display = "none"
+// cesta.style.display = "none"
 ver_cesta.addEventListener("click",(e)=>{
     
     if (cesta.style.display == "none") {
         cesta.style.display = "block";
         sessionStorage.setItem("cesta",1)
-        productos[0].style.marginRight = "200px"
+        // productos[0].style.marginRight = "200px"
     }else{
-        cesta.style.display = "none"
+        // cesta.style.display = "none"
         sessionStorage.setItem("cesta",0)
-        productos[0].style.marginRight = "0px"
+        // productos[0].style.marginRight = "0px"
     }
     
 })
-if(sessionStorage.getItem("cesta")==1){
-    cesta.style.display = "block";
-    productos[0].style.marginRight = "200px"
-}else{
-    cesta.style.display = "none"
-    productos[0].style.marginRight = "0px"
-}
+// if(sessionStorage.getItem("cesta")==1){
+//     cesta.style.display = "block";
+//     productos[0].style.marginRight = "200px"
+// }else{
+//     cesta.style.display = "none"
+//     productos[0].style.marginRight = "0px"
+// }
 calculartotal()
 function calculartotal() {
     var total = 0;

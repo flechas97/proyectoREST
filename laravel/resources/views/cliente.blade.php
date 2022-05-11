@@ -1,35 +1,32 @@
 @extends('appcliente')
 @section('css')
-<link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="css/pedir.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 @endsection
 @section('content')
-
 
     @if ($message = Session::get('error'))
     <div class="row justify-content-center">
         <div class="col-3">
-                    <div class="alert alert-danger  alert-block w-100 text-center">   
-                            <strong>{{ $message }}</strong>
-                    </div>
+            <div class="alert alert-danger  alert-block w-100 text-center">   
+                <strong>{{ $message }}</strong>
+            </div>
         </div>
     </div>          
     @endif
     @if ($errors->any())
     <div class="row justify-content-center">
         <div class="col-3">
-    <div class="alert alert-danger alert-block w-100 text-center">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-    </div>
+            <div class="alert alert-danger alert-block w-100 text-center">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
     </div>    
-@endif
+    @endif
 
     <div id="scrollmargin"></div>
     <div class="carrousel ">
@@ -64,6 +61,7 @@
     <span class="visually-hidden">Next</span>
   </button> --}}
 
+  <!-- Texto animado -->
 <div class="textoanimado">
     <img src="{{URL::asset('css/textoanimado.png')}}" alt="" class="animar">
 </div>
@@ -86,13 +84,15 @@
         <button class="botonvideo">Iniciar pedido</button>
     </div>
 </div> --}}
-
+<!-- Banner parallax -->
 <div id="scene">
   <div data-depth="0" class="fondo2"></div>
   <div data-depth="1.1"><img src="{{URL::asset('css/hamburguesa.jpg')}}" alt="" class="fondo"></div>
   <div data-depth="2.0" class="capa">My first Layer!</div>
 </div>
 <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="{{URL::asset('css/hamburguesa.jpg')}}"></div> -->
+
+<!-- Seccion de tarjetas -->
     <div class="row contenedortarjetas" data-parallax="scroll" data-image-src="{{URL::asset('css/fondoparallax.jpg')}}">
         <div class="col-12 col-lg-7 order-1 tarjetas">
             <div class="tarjeta">
@@ -227,8 +227,15 @@
 
 
 
+
+
+    <!-- Ventanas de los laterales -->
+
+
+    <!-- Subventana MIS PEDIDOS -->
+    <div id="pedidos">
     <div id="pedidosdespl">
-        <button class="abrir_pedidos" id="mis_pedidos"></button>
+    <button class="abrir_pedidos" id="mis_pedidos"></button>
     <div class="cajapedidos">
 
         <h1 class="titulopedidos">Pedidos de {{session()->get('user')}}</h1>
@@ -237,7 +244,6 @@
     <i class="bi bi-heart-arrow"></i><h5 class="subtitulopedido"><b>Fecha:</b> {{$pedido->created_at}} <b>Total:</b> {{$pedido->total}}€</h5>
     <hr>
     <div class="detalle_pedido">
-    
         @foreach ($detalles as $detalle)
             @foreach ($detalle as $detallitos)
                 @if ($detallitos->id_pedido == $pedido->id)
@@ -254,69 +260,122 @@
                 @endif
             @endforeach
         @endforeach
-    
     </div>
+    @endforeach
+</div>
+</div>
+  <!-- END Subventana MIS PEDIDOS -->
+
+        <button id="abrir_pedidos">Ver Pedidos</button>
+        <button id="borrarlocal">Borrar local</button>
+        <!-- <button id="ver_cesta"></button> -->
+        <div class="productos">
+    @foreach($productos as $producto)
+        <div class="producto">
+            <div class="row">
+                <div class="col-12">
+                    <h3>{{$producto->nombre}}</h3>
+                </div>
+                <div class="col-12">
+                    <h3>{{$producto->precio}}€</h3>
+                </div>
+                <div class="col-12">
+                    <img src="{{route('imagen',['id'=>$producto->id])}}" alt="" class="imagenproducto">
+                </div>
+                <div class="col-12">
+                    <button class="addcesta">Añadir a la cesta</button>
+                </div>
+            </div>
+            
+        </div>
     @endforeach
     
 </div>
-
+<div id="despcesta">
+<button id="ver_cesta">ver cesta</button>
+    <form action="{{route('mandar_pedido')}}" method="post" id="cesta">
+        @csrf
+        <!-- <input type="hidden" name="id_user" value="{{session()->get('id_user')}}">
+        <input type="hidden" name="nombre" value="{{session()->get('user')}}"> -->
+        <input id="total" type="hidden" name="total" value = "0">
+        <ul id="lista">
+            <li>Lista de la cesta</li>
+        </ul>
+        <h5 id= "totalcesta">TOTAL: </h5>
+        <input type="submit" value="enviar">
+      
+    </form>
+</div>
     </div>
+    <script src="js/cesta.js"></script>
 
-    <div id="sugerencias">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="well well-sm">
-                        <form class="form-horizontal" method="post">
-                            <fieldset>
-                                <legend class="text-center header">Contact us</legend>
-        
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="fname" name="name" type="text" placeholder="First Name" class="form-control">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control">
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="email" name="email" type="text" placeholder="Email Address" class="form-control">
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control">
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                                    <div class="col-md-8">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                                    </div>
-                                </div>
-        
-                                <div class="form-group">
-                                    <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                                    </div>
-                                </div>
-                            </fieldset>
+    <div id="inicio_sesion">
+        @if(!session()->get('user'))
+        <button id="btn_inicio_sesion">Abrir Sesion</button>
+        @else
+        <button id="btn_inicio_sesion">Cerrar Sesion</button>
+        @endif
+        <div id="sugerencias">
+                    <button class="abrir_sugerencias" id="btn_sugerencias">Ver SUgerencias</button>
+                    <div class="formulario_sugerencias">
+                        <form action="" method="post">
+                            <input type="text" name="" id="">
+                            
                         </form>
                     </div>
-                </div>
+        </div>
+        @if(!session()->get('user'))
+        <div class="row">
+            <div class="col-6 tarjetalogin">
+                
+                    <form action="{{route('logincliente')}}" method="post">
+                            @csrf
+                        <div class="col-12 text-center">
+                            <h2 class= "mt-3">Inicio de sesion</h2>
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="email" id="" class="formulariossesion" placeholder="Email...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="password" name="password" id="" class="formulariossesion" placeholder="Contraseña...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="submit" value="Iniciar" class="submitformulariosesion">
+                        </div>
+                    </form>
+            </div>
+            <div class="col-6 tarjetalogin">
+                        
+                    <form action="{{route('registrar-in')}}" method="post">
+                        @csrf
+                        <div class="col-12 text-center">
+                            <h2 class= "mt-3">Registro de sesion</h2>
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="name" id="" class="formulariossesion" placeholder="Usuario...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="email" id="" class="formulariossesion" placeholder="Email...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="password" id="" class="formulariossesion" placeholder="Contraseña...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="password_confirmation" id="" class="formulariossesion" placeholder="Confirmar Contraseña...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="submit" value="Iniciar" class="submitformulariosesion">
+                        </div>
+                    </form>
             </div>
         </div>
-       
+        @else
+        <form action="{{route('registrar-out')}}" method="post">
+            @csrf
+            <button id="iniciarses" class="btn_mav">Cerrar sesion</button>
+            <p class="usuario">Usuario: {{session()->get('user')}}</p>
+        </form>
+        @endif
     </div>
     @endsection
     <!-- <script src="https://unpkg.com/scrollreveal"></script>

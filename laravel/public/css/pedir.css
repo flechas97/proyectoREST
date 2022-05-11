@@ -10,7 +10,7 @@
     border: 3px solid #ffced9;
     color: white;
 }
-img{
+.imagenproducto{
     width: 200px;
     border-radius: 8px;
 }
@@ -24,15 +24,27 @@ img{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    height: 90%;
+    width: 95%;
+    margin: auto;
+    position: relative;
+    top: -100px;
+    overflow-y: scroll;
 }
 #cesta{
-    display: none;
-    position: absolute;
-    top: 50px;
+    /* display: none; */
+    /* display: block; */
+    /* position: absolute;
+    top: 0px;
     right: 0px;
     height: 100vh;
-    width: 200px;
-    background-color: #5ef24a;
+    width: 100%; */
+    /* background-color: #5ef24a; */
+    position: relative;
+    top: -100px;
+    overflow-y: scroll;
+    height: 100%;
+    width: 100%;
 }
 i{
     font-size: 50px;
@@ -42,4 +54,8 @@ i{
     border-radius: 100%;
     padding: 0px 50px;
     font-size: 40px;
+    position: relative;
+    z-index: 59;
+    left: -40%;
+    top: 0%;
 }

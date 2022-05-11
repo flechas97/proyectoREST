@@ -65,13 +65,54 @@ var zindex = 0;
     if(pedidos_despl.style.transform == 'translateX(-99.9%)'){
       pedidos_despl.style.transform = 'translateX(0%)'
       pedidos_despl.style.zIndex = zindex
+      mis_pedidos.style.zIndex = zindex
       zindex++
     }else{
       pedidos_despl.style.transform = 'translateX(-99.9%)'
     }
     
   })
+  var pedidos = document.getElementById('pedidos')
+  var abrir_pedidos  = document.getElementById('abrir_pedidos')
+  pedidos.style.transform = 'translateY(99.9%)'
+  abrir_pedidos.addEventListener('click',()=>{
+    if(pedidos.style.transform == 'translateY(99.9%)'){
+      pedidos.style.transform = 'translateY(0%)'
+      pedidos.style.zIndex = zindex
+      abrir_pedidos.style.zIndex = zindex
+      zindex++
+    }else{
+      pedidos.style.transform = 'translateY(99.9%)'
+    }
+    
+  })
+  var inicio_sesion = document.getElementById('inicio_sesion')
+  var btn_inicio_sesion  = document.getElementById('btn_inicio_sesion')
+  inicio_sesion.style.transform = 'translateY(-99.9%)'
+  btn_inicio_sesion.addEventListener('click',()=>{
+    if(inicio_sesion.style.transform == 'translateY(-99.9%)'){
+      inicio_sesion.style.transform = 'translateY(0%)'
+      inicio_sesion.style.zIndex = zindex
+      btn_inicio_sesion.style.zIndex = zindex
+      zindex++
+    }else{
+      inicio_sesion.style.transform = 'translateY(-99.9%)'
+    }
+  })
 
+  var despcesta = document.getElementById('despcesta')
+  var btn_despcesta  = document.getElementById('ver_cesta')
+  despcesta.style.transform = 'translateX(99.9%)'
+  btn_despcesta.addEventListener('click',()=>{
+    if(despcesta.style.transform == 'translateX(99.9%)'){
+      despcesta.style.transform = 'translateX(0%)'
+      despcesta.style.zIndex = zindex
+      despcesta.style.zIndex = zindex
+      zindex++
+    }else{
+      despcesta.style.transform = 'translateX(99.9%)'
+    }
+  })
   var btn_sugerencias = document.getElementById('btn_sugerencias');
   var sugerencias = document.getElementById('sugerencias');
   sugerencias.style.transform = 'translateX(99%)'

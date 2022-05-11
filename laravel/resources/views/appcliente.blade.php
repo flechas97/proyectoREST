@@ -12,6 +12,7 @@
     <title>Document</title>
 </head>
 <body>
+    
 <header class="row justify-content-center">
         <div class="col-7 col-lg-7">
             <div class="row">
@@ -33,7 +34,7 @@
                     <div class="col-2 enlaces">
                         <a href=""> <button class="btn_mav">Enlace</button></a>                    </div>
                     <div class="col-2 enlaces">
-                     <button class="btn_mav" id="btn_sugerencias">Sugerencias</button>
+                     <!-- <button class="btn_mav" id="btn_sugerencias">Sugerencias</button> -->
                     </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="productos">
-    @foreach($productos as $producto)
+    @foreach($productos_pedir as $producto)
         <div class="producto">
             <div class="row">
                 <div class="col-12">
