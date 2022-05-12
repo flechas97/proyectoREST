@@ -1,14 +1,22 @@
 .producto{
     width: 300px;
-    height: 300px;
-    background-color: #F24A72;
+    height: auto;
+    background-color: #afafaf13;
     margin: 20px;
     display: flex;
     justify-content: center;
     text-align: center;
     border-radius: 8px;
-    border: 3px solid #ffced9;
-    color: white;
+    border: 3px solid #000000;
+    color: black;
+}
+.titulo_pedidos{
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+    padding-top: 20px;
+    position: relative;
+    z-index: 100;
 }
 .imagenproducto{
     width: 200px;
@@ -19,16 +27,25 @@
     width: 80%;
     padding: 5px;
     border-radius: 8px;
+    margin: 10px;
+    background-color: #000000;
+    color: white;
+}
+.titulo_cesta{
+    margin-top: 35px;
+}
+.addcesta:disabled{
+    opacity: 20%;
 }
 .productos{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    height: 90%;
-    width: 95%;
+    height: 80%;
+    width: 70%;
     margin: auto;
     position: relative;
-    top: -100px;
+    top: -200px;
     overflow-y: scroll;
 }
 #cesta{
@@ -42,9 +59,12 @@
     /* background-color: #5ef24a; */
     position: relative;
     top: -100px;
+    left: 125px;
     overflow-y: scroll;
     height: 100%;
-    width: 100%;
+    width: 81%;
+    background-color: rgba(255, 255, 255, 0.267);
+    border-radius: 8px;
 }
 i{
     font-size: 50px;
@@ -56,6 +76,184 @@ i{
     font-size: 40px;
     position: relative;
     z-index: 59;
-    left: -40%;
+    left: -35%;
     top: 0%;
+    background-color: rgba(255, 255, 255, 0.781);
+}
+#lista li{
+    background-color: rgba(240, 248, 255, 0.103);
+    margin: 5px;
+    width: 300px;
+    list-style: none;
+    border-radius: 8px;
+    border: 2px solid black;
+}
+
+#lista li p{
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px;
+}
+.numero_cantidad{
+    display: inline !important;
+    font-size: 24px;
+    font-weight: bold;
+    margin: auto 20px;
+}
+.sumarbtn{
+background-image: url('anadir.png');
+background-position: center;
+background-size: cover;
+border-style: none;
+background-color: #00000000;
+width: 20px;
+height: 20px;
+}
+.eliminarbtn{
+    background-image: url('cerrar.png');
+background-position: center;
+background-size: cover;
+border-style: none;
+background-color: #00000000;
+width: 20px;
+height: 20px;
+float: right;
+position: relative;
+top: -50px;
+left: -20px;
+}
+.restarbtn{
+    background-image: url('menos.png');
+    background-position: center;
+    background-size: cover;
+    border-style: none;
+    background-color: #00000000;
+    width: 20px;
+    height: 20px;
+    margin-left: 30%;
+}
+.cestita{
+    background-image: url('cestita.png');
+    background-size: cover;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    margin-top: 10px;
+}
+.enviar_cesta{
+    position: relative;
+    left: 240px;
+    top: -50px;
+    background-image: url("buy.png");
+    background-size: cover;
+    background-position: center;
+    border-style: none;
+    background-color: #00000000;
+    width: 95px;
+    height: 50px;
+}
+#totalcesta{
+    text-align: center;
+    font-size: 30px;
+}
+@media (max-width: 500px) {
+    #ver_cesta{
+        border-style: none;
+        border-radius: 100%;
+        padding: 0px 50px;
+        font-size: 40px;
+        position: relative;
+        z-index: 59;
+        left: -35%;
+        top: -10%;
+        background-color: rgba(255, 255, 255, 0.781);
+    }
+    #totalcesta{
+        text-align: center;
+    }
+    .enviar_cesta{
+        position: relative;
+        left: 170px;
+        top: -45px;
+        background-image: url("buy.png");
+        background-size: cover;
+        background-position: center;
+        border-style: none;
+        background-color: #00000000;
+        width: 65px;
+        height: 50px;
+    }
+    .titulo_cesta{
+        margin-top: 25px;
+        margin-left: 25px;
+    }
+    ol, ul {
+        padding-left: 1rem;
+    }
+    #lista li{
+        background-color: rgba(240, 248, 255, 0.103);
+        margin: 5px;
+        width: 213px;
+        list-style: none;
+        border-radius: 8px;
+        border: 2px solid black;
+    }
+    #lista li p{
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        padding: 10px;
+    }
+    #cesta{
+        /* display: none; */
+        /* display: block; */
+        /* position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 100vh;
+        width: 100%; */
+        /* background-color: #5ef24a; */
+        position: relative;
+        top: -100px;
+        left: 70px;
+        overflow-y: scroll;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 8px;
+    }
+    .productos{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        height: 80%;
+        width: 90%;
+        margin: auto;
+        position: relative;
+        top: -100px;
+        overflow-y: scroll;
+    }
+    .producto{
+        width: 46%;
+        height: auto;
+        background-color: #afafaf13;
+        margin: 3px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        border-radius: 8px;
+        border: 3px solid #000000;
+        color: black;
+    }
+    .imagenproducto{
+        width: 100%;
+        border-radius: 8px;
+    }
+    .titulo_pedidos{
+        text-align: center;
+        font-weight: bold;
+        font-size: 25px;
+        padding-top: 20px;
+    }
 }

@@ -2,9 +2,9 @@ var addcesta = document.getElementsByClassName("addcesta");
 var borrarlocal = document.getElementById("borrarlocal");
 var lista = document.getElementById("lista");
 
-borrarlocal.addEventListener("click",()=>{
-    localStorage.clear()
-})
+// borrarlocal.addEventListener("click",()=>{
+//     localStorage.clear()
+// })
 for (let i = 0; i < addcesta.length; i++) {
     if(localStorage.getItem(addcesta[i].parentNode.parentNode.childNodes[1].childNodes[1].textContent)){
         addcesta[i].disabled = true
@@ -38,7 +38,7 @@ for (let i = 0; i < addcesta.length; i++) {
         var li = document.createElement("li")
         var p = document.createElement("p")
         li.setAttribute("id",producto);
-        p.textContent = cosas[0]+" : "+cosas[1]+" : "+cosas[2];
+        p.textContent = cosas[0]+" : "+cosas[1];
         li.appendChild(p);
         
         var enviarproducto = document.createElement("input");
@@ -52,7 +52,8 @@ for (let i = 0; i < addcesta.length; i++) {
         enviarproducto.setAttribute("id",producto+"cantidad");
         enviarcantidad.value = cantidad;
         var botonrestar= document.createElement("button");
-        botonrestar.textContent = "Restar";
+        botonrestar.setAttribute('class','restarbtn')
+        // botonrestar.textContent = "Restar";
         botonrestar.addEventListener("click",(e)=>{
             e.preventDefault();
             if(cantidad >1){
@@ -61,12 +62,13 @@ for (let i = 0; i < addcesta.length; i++) {
             guardarlocal[2] = cantidad
             localStorage.setItem(producto, JSON.stringify(guardarlocal));
             enviarcantidad.value = cantidad;
-            p.textContent = cosas[0]+" : "+cosas[1]+" : "+cantidad;
+            p.textContent = cosas[0]+" : "+cosas[1];
             calculartotal();
             }
         })
         var botonsumar= document.createElement("button");
-        botonsumar.textContent = "Sumar";
+        botonsumar.setAttribute('class','sumarbtn')
+        // botonsumar.textContent = "Sumar";
         botonsumar.addEventListener("click",(e)=>{
             e.preventDefault();
             cantidad++
@@ -74,12 +76,14 @@ for (let i = 0; i < addcesta.length; i++) {
             guardarlocal[2] = cantidad
             localStorage.setItem(producto, JSON.stringify(guardarlocal));
             enviarcantidad.value = cantidad;
-            p.textContent = cosas[0]+" : "+cosas[1]+" : "+cantidad;
+            p.textContent = cosas[0]+" : "+cosas[1];
             calculartotal();
             
         })
         var botoneliminar= document.createElement("button");
-        botoneliminar.textContent = "Eliminar";
+        // botoneliminar.textContent = "Eliminar";
+        botoneliminar.setAttribute('class','eliminarbtn')
+
         botoneliminar.addEventListener("click",(e)=>{
             e.preventDefault();
             localStorage.removeItem(producto);
@@ -87,9 +91,13 @@ for (let i = 0; i < addcesta.length; i++) {
             ver_cesta.innerHTML = "<i class='bi bi-bag'></i><br>"+ localStorage.length;
             location.reload();
         });
+        var numero_cantidad= document.createElement("p");
+        numero_cantidad.setAttribute("class","numero_cantidad")
+        numero_cantidad.textContent = cantidad; 
         li.appendChild(enviarproducto);
         li.appendChild(enviarcantidad);
-        li.appendChild(botonrestar);
+        li.appendChild(botonrestar)
+        li.appendChild(numero_cantidad);
         li.appendChild(botonsumar);
         li.appendChild(botoneliminar);
         lista.appendChild(li);
@@ -110,8 +118,7 @@ for (let i = 0; i < localStorage.length; i++) {
         var p = document.createElement("p")
         li.setAttribute("id",localStorage.key(i));
         p.textContent = localStorage.key(i)+
-        " : "+JSON.parse(localStorage.getItem(localStorage.key(i)))[1]+
-        " : "+JSON.parse(localStorage.getItem(localStorage.key(i)))[2];
+        " : "+JSON.parse(localStorage.getItem(localStorage.key(i)))[1];
         var enviarproducto = document.createElement("input");
         enviarproducto.setAttribute("type","hidden");
         enviarproducto.setAttribute("name",localStorage.key(i));
@@ -123,7 +130,7 @@ for (let i = 0; i < localStorage.length; i++) {
         enviarproducto.setAttribute("id",localStorage.key(i)+"cantidad");
         enviarcantidad.value = JSON.parse(localStorage.getItem(localStorage.key(i)))[2];
         var botonrestar= document.createElement("button");
-        botonrestar.textContent = "Restar";
+        // botonrestar.textContent = "Restar";
         botonrestar.setAttribute("class","restarbtn")
         // botonrestar.addEventListener("click",(e)=>{
         //     e.preventDefault();
@@ -139,10 +146,15 @@ for (let i = 0; i < localStorage.length; i++) {
         // })
         var botoneliminar= document.createElement("button");
         botoneliminar.setAttribute("class","eliminarbtn")
-        botoneliminar.textContent = "Eliminar";
+        // botoneliminar.textContent = "Eliminar";
         var botonsumar= document.createElement("button");
         botonsumar.setAttribute("class","sumarbtn")
-        botonsumar.textContent = "Sumar";
+        // botonsumar.textContent = "Sumar";
+        var numero_cantidad= document.createElement("p");
+        numero_cantidad.setAttribute("class","numero_cantidad")
+
+        numero_cantidad.textContent = JSON.parse(localStorage.getItem(localStorage.key(i)))[2]; 
+
         // botoneliminar.addEventListener("click",(e)=>{
         //     e.preventDefault();
         //     localStorage.removeItem(JSON.parse(localStorage.getItem(localStorage.key(i)))[0]);
@@ -153,6 +165,7 @@ for (let i = 0; i < localStorage.length; i++) {
         li.appendChild(enviarcantidad);
         li.appendChild(p);
         li.appendChild(botonrestar)
+        li.appendChild(numero_cantidad)
         li.appendChild(botonsumar)
         li.appendChild(botoneliminar)
         lista.appendChild(li); 
@@ -171,10 +184,12 @@ for (let i = 0; i < localStorage.length; i++) {
                     localStorage.setItem(botones[i].parentNode.id, JSON.stringify(guardarlocal));
                     //enviarcantidad.value = cantidad;
                     var p = botones[i].parentNode.childNodes[2]
+                    var numero_cantidad = botones[i].parentNode.childNodes[4]
                     console.log(botones[i].parentNode.childNodes)
                     botones[i].parentNode.childNodes[0].value= botones[i].parentNode.id;
                     botones[i].parentNode.childNodes[1].value= cantidad;
-                    p.textContent = botones[i].parentNode.id+" : "+JSON.parse(localStorage.getItem(botones[i].parentNode.id))[1]+" : "+cantidad;
+                    p.textContent = botones[i].parentNode.id+" : "+JSON.parse(localStorage.getItem(botones[i].parentNode.id))[1];
+                    numero_cantidad.textContent = JSON.parse(localStorage.getItem(localStorage.key(i)))[2]; 
                     calculartotal()
             }
     })
@@ -205,7 +220,9 @@ for (let i = 0; i < localStorage.length; i++) {
         var p = sumarbotones[i].parentNode.childNodes[2]
         sumarbotones[i].parentNode.childNodes[0].value= sumarbotones[i].parentNode.id;
         sumarbotones[i].parentNode.childNodes[1].value= cantidad;
-        p.textContent = sumarbotones[i].parentNode.id+" : "+JSON.parse(localStorage.getItem(sumarbotones[i].parentNode.id))[1]+" : "+cantidad;
+        p.textContent = sumarbotones[i].parentNode.id+" : "+JSON.parse(localStorage.getItem(sumarbotones[i].parentNode.id))[1];
+        var numero_cantidad = botones[i].parentNode.childNodes[4]
+        numero_cantidad.textContent = JSON.parse(localStorage.getItem(localStorage.key(i)))[2]; 
         calculartotal()
     })
 }
@@ -233,7 +250,7 @@ for (let i = 0; i < localStorage.length; i++) {
 // }
 
 var ver_cesta = document.getElementById('ver_cesta');
-ver_cesta.innerHTML = "<i class='bi bi-bag'></i><br>"+ localStorage.length;
+ver_cesta.innerHTML = "<div class='cestita'></div>"+ localStorage.length;
 var cesta = document.getElementById('cesta');
 var productos = document.getElementsByClassName("productos")
 // cesta.style.display = "none"

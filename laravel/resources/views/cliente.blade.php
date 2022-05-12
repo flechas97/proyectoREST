@@ -234,6 +234,7 @@
 
     <!-- Subventana MIS PEDIDOS -->
     <div id="pedidos">
+        <h1 class="titulo_pedidos">Completa Tu Pedido</h1>
     <div id="pedidosdespl">
     <button class="abrir_pedidos" id="mis_pedidos"></button>
     <div class="cajapedidos">
@@ -266,8 +267,8 @@
 </div>
   <!-- END Subventana MIS PEDIDOS -->
 
-        <button id="abrir_pedidos">Ver Pedidos</button>
-        <button id="borrarlocal">Borrar local</button>
+        <button id="abrir_pedidos"></button>
+        {{-- <button id="borrarlocal">Borrar local</button> --}}
         <!-- <button id="ver_cesta"></button> -->
         <div class="productos">
     @foreach($productos as $producto)
@@ -299,10 +300,10 @@
         <input type="hidden" name="nombre" value="{{session()->get('user')}}"> -->
         <input id="total" type="hidden" name="total" value = "0">
         <ul id="lista">
-            <li>Lista de la cesta</li>
+            <h3 class="titulo_cesta">Lista de la cesta</h3>
         </ul>
         <h5 id= "totalcesta">TOTAL: </h5>
-        <input type="submit" value="enviar">
+        <input type="submit" value="" class="enviar_cesta">
       
     </form>
 </div>
@@ -313,7 +314,7 @@
         @if(!session()->get('user'))
         <button id="btn_inicio_sesion">Abrir Sesion</button>
         @else
-        <button id="btn_inicio_sesion">Cerrar Sesion</button>
+        <button id="btn_inicio_sesion"></button>
         @endif
         <div id="sugerencias">
                     <button class="abrir_sugerencias" id="btn_sugerencias">Ver SUgerencias</button>

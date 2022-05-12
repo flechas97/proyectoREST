@@ -74,15 +74,15 @@ var zindex = 0;
   })
   var pedidos = document.getElementById('pedidos')
   var abrir_pedidos  = document.getElementById('abrir_pedidos')
-  pedidos.style.transform = 'translateY(99.9%)'
+  pedidos.style.transform = 'translateY(-99.9%)'
   abrir_pedidos.addEventListener('click',()=>{
-    if(pedidos.style.transform == 'translateY(99.9%)'){
+    if(pedidos.style.transform == 'translateY(-99.9%)'){
       pedidos.style.transform = 'translateY(0%)'
       pedidos.style.zIndex = zindex
       abrir_pedidos.style.zIndex = zindex
       zindex++
     }else{
-      pedidos.style.transform = 'translateY(99.9%)'
+      pedidos.style.transform = 'translateY(-99.9%)'
     }
     
   })
@@ -97,20 +97,6 @@ var zindex = 0;
       zindex++
     }else{
       inicio_sesion.style.transform = 'translateY(-99.9%)'
-    }
-  })
-
-  var despcesta = document.getElementById('despcesta')
-  var btn_despcesta  = document.getElementById('ver_cesta')
-  despcesta.style.transform = 'translateX(99.9%)'
-  btn_despcesta.addEventListener('click',()=>{
-    if(despcesta.style.transform == 'translateX(99.9%)'){
-      despcesta.style.transform = 'translateX(0%)'
-      despcesta.style.zIndex = zindex
-      despcesta.style.zIndex = zindex
-      zindex++
-    }else{
-      despcesta.style.transform = 'translateX(99.9%)'
     }
   })
   var btn_sugerencias = document.getElementById('btn_sugerencias');
@@ -151,3 +137,24 @@ var zindex = 0;
       sugerencias.style.transform = 'translateX(99%)'
     }
   })
+
+  var despcesta = document.getElementById('despcesta')
+  var btn_despcesta  = document.getElementById('ver_cesta')
+  despcesta.style.transform = 'translateX(80.9%)';
+  btn_despcesta.addEventListener('click',()=>{
+    if(despcesta.style.transform == 'translateX(80.9%)'){
+      despcesta.style.transform = 'translateX(0%)';
+      despcesta.style.zIndex = zindex
+      zindex++
+      sessionStorage.setItem('cesta',1);
+    }else{
+      despcesta.style.transform = 'translateX(80.9%)';
+    }
+  })
+  if(sessionStorage.getItem('cesta') == 1){
+    despcesta.style.transform = 'translateX(0%)';
+    pedidos.style.transform = 'translateY(0%)';
+  }else{
+    despcesta.style.transform = 'translateX(80.9%)';
+    pedidos.style.transform = 'translateY(-99.9%)';
+  }
