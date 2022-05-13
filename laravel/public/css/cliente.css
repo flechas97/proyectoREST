@@ -499,11 +499,17 @@ a{
     }
     .tarjetalogin{
         width: 50%;
-        height: auto;
-        margin-top: 5vh;
+        height: 100%;
+        /* margin-top: 5vh; */
         background-color: #EAEA7F;
         border-radius: 8px;
-        overflow: hidden;
+        /* overflow: hidden; */
+        z-index: 25 !important;
+    }
+    .ventanalogin{
+        height: 100%;
+        position: relative;
+        bottom: 31%;
     }
     .controlsesion{
         width: 100%;
@@ -881,7 +887,7 @@ font-size: 20px;
     background-image: url('papel.jpg');
     background-size: contain;
     background-position: center;
-
+z-index: 999;
 }
 .abrir_pedidos{
     /* position: fixed;
@@ -953,7 +959,7 @@ background-size: contain;
 background-repeat: no-repeat;
 background-color: #36363600;
 border-style: none;
-z-index: 0;
+z-index: 50 !important;
 }
 #despcesta{
     width: 540px;
@@ -966,6 +972,52 @@ z-index: 0;
     right: 0;
     transition: 1s ease all;
     transform: translateX(0%);
+}
+@media (max-width: 1400px) {
+    .abrir_pedidos{
+        /* position: fixed;
+        top: 100px;
+        left: 0px; */
+        position: relative;
+        top: 150PX;
+        left: 75PX;
+        float: right;
+        z-index: 999;
+        transform: translateX(0%);
+        background-color: #bfbfbf00;
+        border-style: none;
+        background-image: url('volverpedido.png');
+        background-size: cover;
+        width: 315px;
+        height: 340px;
+    }
+    #btn_inicio_sesion{
+        position: relative;
+        height: 200px;
+        width: 400px;
+        top: 82%;
+        left: 52%;
+        background-image: url('boton_perfil.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #36363600;
+        border-style: none;
+        z-index: 0;
+        }
+        #abrir_pedidos{
+            position: relative;
+            top: 68%;
+            left: 20%;
+            height: 200px;
+            width: 400px;
+            background-image: url('boton_pedir.png');
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #36363600;
+        border-style: none;
+        }
 }
 @media (max-width: 500px) {
     #despcesta{

@@ -326,7 +326,7 @@
                     </div>
         </div>
         @if(!session()->get('user'))
-        <div class="row">
+        <div class="row ventanalogin">
             <div class="col-6 tarjetalogin">
                 
                     <form action="{{route('logincliente')}}" method="post">

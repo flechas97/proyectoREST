@@ -72,6 +72,8 @@ var zindex = 0;
     }
     
   })
+  var inicio_sesion = document.getElementById('inicio_sesion')
+  var btn_inicio_sesion  = document.getElementById('btn_inicio_sesion')
   var pedidos = document.getElementById('pedidos')
   var abrir_pedidos  = document.getElementById('abrir_pedidos')
   pedidos.style.transform = 'translateY(-99.9%)'
@@ -86,17 +88,18 @@ var zindex = 0;
     }
     
   })
-  var inicio_sesion = document.getElementById('inicio_sesion')
-  var btn_inicio_sesion  = document.getElementById('btn_inicio_sesion')
+
   inicio_sesion.style.transform = 'translateY(-99.9%)'
   btn_inicio_sesion.addEventListener('click',()=>{
     if(inicio_sesion.style.transform == 'translateY(-99.9%)'){
       inicio_sesion.style.transform = 'translateY(0%)'
       inicio_sesion.style.zIndex = zindex
       btn_inicio_sesion.style.zIndex = zindex
+      abrir_pedidos.style.display = "none"
       zindex++
     }else{
       inicio_sesion.style.transform = 'translateY(-99.9%)'
+      abrir_pedidos.style.display = "block"
     }
   })
   var btn_sugerencias = document.getElementById('btn_sugerencias');
@@ -105,7 +108,7 @@ var zindex = 0;
   btn_sugerencias.addEventListener('click',()=>{
     if(sugerencias.style.transform == 'translateX(99%)'){
       sugerencias.style.transform = 'translateX(0%)'
-      sugerencias.style.zIndex = zindex
+      // sugerencias.style.zIndex = zindex
       zindex++
     }else{
       sugerencias.style.transform = 'translateX(99%)'

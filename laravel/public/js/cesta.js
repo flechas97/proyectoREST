@@ -40,7 +40,7 @@ for (let i = 0; i < addcesta.length; i++) {
         li.setAttribute("id",producto);
         p.textContent = cosas[0]+" : "+cosas[1];
         li.appendChild(p);
-        
+        var numero_cantidad= document.createElement("p");
         var enviarproducto = document.createElement("input");
         enviarproducto.setAttribute("type","hidden");
         enviarproducto.setAttribute("name",producto);
@@ -61,6 +61,7 @@ for (let i = 0; i < addcesta.length; i++) {
             console.log(cantidad)
             guardarlocal[2] = cantidad
             localStorage.setItem(producto, JSON.stringify(guardarlocal));
+            numero_cantidad.textContent = cantidad; 
             enviarcantidad.value = cantidad;
             p.textContent = cosas[0]+" : "+cosas[1];
             calculartotal();
@@ -75,6 +76,7 @@ for (let i = 0; i < addcesta.length; i++) {
             console.log(cantidad)
             guardarlocal[2] = cantidad
             localStorage.setItem(producto, JSON.stringify(guardarlocal));
+            numero_cantidad.textContent = cantidad; 
             enviarcantidad.value = cantidad;
             p.textContent = cosas[0]+" : "+cosas[1];
             calculartotal();
@@ -88,10 +90,10 @@ for (let i = 0; i < addcesta.length; i++) {
             e.preventDefault();
             localStorage.removeItem(producto);
             li.remove();
-            ver_cesta.innerHTML = "<i class='bi bi-bag'></i><br>"+ localStorage.length;
+            ver_cesta.innerHTML = "<div class='cestita'></div>"+ localStorage.length;
             location.reload();
         });
-        var numero_cantidad= document.createElement("p");
+        
         numero_cantidad.setAttribute("class","numero_cantidad")
         numero_cantidad.textContent = cantidad; 
         li.appendChild(enviarproducto);
@@ -103,7 +105,7 @@ for (let i = 0; i < addcesta.length; i++) {
         lista.appendChild(li);
 
 
-        ver_cesta.innerHTML = "<i class='bi bi-bag'></i><br>"+ localStorage.length;
+        ver_cesta.innerHTML = "<div class='cestita'></div>"+ localStorage.length;
  
         addcesta[i].disabled = true
         calculartotal();
@@ -187,7 +189,7 @@ for (let i = 0; i < localStorage.length; i++) {
                     var numero_cantidad = botones[i].parentNode.childNodes[4]
                     console.log(botones[i].parentNode.childNodes)
                     botones[i].parentNode.childNodes[0].value= botones[i].parentNode.id;
-                    botones[i].parentNode.childNodes[1].value= cantidad;
+                    botones[i].parentNode.childNodes[4].value= cantidad;
                     p.textContent = botones[i].parentNode.id+" : "+JSON.parse(localStorage.getItem(botones[i].parentNode.id))[1];
                     numero_cantidad.textContent = JSON.parse(localStorage.getItem(localStorage.key(i)))[2]; 
                     calculartotal()
@@ -203,7 +205,7 @@ for (let i = 0; i < localStorage.length; i++) {
         localStorage.removeItem(JSON.parse(localStorage.getItem(botones[i].parentNode.id))[0]);
         console.log(  botones[i].parentNode)
         //botones[i].parentNode.remove();
-        ver_cesta.innerHTML = "<i class='bi bi-bag'></i><br>"+ localStorage.length;
+        ver_cesta.innerHTML = "<div class='cestita'></div>"+ localStorage.length;
         location.reload();
     })
 }
@@ -219,7 +221,7 @@ for (let i = 0; i < localStorage.length; i++) {
         localStorage.setItem(sumarbotones[i].parentNode.id, JSON.stringify(guardarlocal));
         var p = sumarbotones[i].parentNode.childNodes[2]
         sumarbotones[i].parentNode.childNodes[0].value= sumarbotones[i].parentNode.id;
-        sumarbotones[i].parentNode.childNodes[1].value= cantidad;
+        sumarbotones[i].parentNode.childNodes[4].value= cantidad;
         p.textContent = sumarbotones[i].parentNode.id+" : "+JSON.parse(localStorage.getItem(sumarbotones[i].parentNode.id))[1];
         var numero_cantidad = botones[i].parentNode.childNodes[4]
         numero_cantidad.textContent = JSON.parse(localStorage.getItem(localStorage.key(i)))[2]; 
