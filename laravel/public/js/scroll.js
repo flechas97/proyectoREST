@@ -150,8 +150,10 @@ var zindex = 0;
       despcesta.style.zIndex = zindex
       zindex++
       sessionStorage.setItem('cesta',1);
+      console.log("cesta")
     }else{
       despcesta.style.transform = 'translateX(80.9%)';
+      sessionStorage.setItem('cesta',0);
     }
   })
   if(sessionStorage.getItem('cesta') == 1){

@@ -275,14 +275,15 @@
         <div class="producto">
             <div class="row">
                 <div class="col-12">
-                    <h3>{{$producto->nombre}}</h3>
-                </div>
-                <div class="col-12">
-                    <h3>{{$producto->precio}}€</h3>
-                </div>
-                <div class="col-12">
                     <img src="{{route('imagen',['id'=>$producto->id])}}" alt="" class="imagenproducto">
                 </div>
+                <div class="col-12">
+                    <h3>{{$producto->nombre}}</h3>
+                </div>
+                <div class="col-12 d-none">
+                    <h3>{{$producto->precio}}€</h3>
+                </div>
+               
                 <div class="col-12">
                     <button class="addcesta">Añadir a la cesta</button>
                 </div>
@@ -308,7 +309,7 @@
     </form>
 </div>
     </div>
-    <script src="js/cesta.js"></script>
+
 
     <div id="inicio_sesion">
         @if(!session()->get('user'))
@@ -378,6 +379,7 @@
         </form>
         @endif
     </div>
+
     @endsection
     <!-- <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/scroll.js"></script>

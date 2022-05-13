@@ -1,21 +1,32 @@
 var addcesta = document.getElementsByClassName("addcesta");
+var addproducto = document.getElementsByClassName("producto");
 var borrarlocal = document.getElementById("borrarlocal");
 var lista = document.getElementById("lista");
-
+var imagen = document.getElementsByClassName("imagenproducto");
 // borrarlocal.addEventListener("click",()=>{
 //     localStorage.clear()
 // })
 for (let i = 0; i < addcesta.length; i++) {
-    if(localStorage.getItem(addcesta[i].parentNode.parentNode.childNodes[1].childNodes[1].textContent)){
+    if(localStorage.getItem(addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent)){
         addcesta[i].disabled = true
     }
-    addcesta[i].addEventListener("click",()=>{
-        var producto = addcesta[i].parentNode.parentNode.childNodes[1].childNodes[1].textContent;
-        var precio = addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent;
+    var div_principal = addcesta[i].parentNode.parentNode.parentNode;
+    div_principal.addEventListener("mouseenter",()=>{
+        imagen[i].style.transform = 'scale(1.1,1.1) translateY(-5.0%)';
+        // imagen[i].style.transform = '';
+    })
+    div_principal.addEventListener("mouseleave",()=>{
+        imagen[i].style.transform = 'scale(1.0,1.0)';
+    })
+    addcesta[i].style.display = "none";
+    addproducto[i].addEventListener("click",()=>{
+        console.log(addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent)
+        var producto = addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent;
+        var precio = addcesta[i].parentNode.parentNode.childNodes[5].childNodes[1].textContent;
         var guardarlocal= [];
         if(!localStorage.getItem(producto)){
             localStorage.setItem(producto,0)
-        }
+        
         cantidad=parseInt(JSON.parse(localStorage.getItem(producto))[2]);
         cantidad++;
         if(!cantidad){
@@ -109,6 +120,9 @@ for (let i = 0; i < addcesta.length; i++) {
  
         addcesta[i].disabled = true
         calculartotal();
+    }else{
+        console.log("ya se ha añadido")
+    }
     }) 
 }
 
@@ -260,11 +274,11 @@ ver_cesta.addEventListener("click",(e)=>{
     
     if (cesta.style.display == "none") {
         cesta.style.display = "block";
-        sessionStorage.setItem("cesta",1)
+        // sessionStorage.setItem("cesta",1)
         // productos[0].style.marginRight = "200px"
     }else{
         // cesta.style.display = "none"
-        sessionStorage.setItem("cesta",0)
+        // sessionStorage.setItem("cesta",0)
         // productos[0].style.marginRight = "0px"
     }
     
@@ -291,3 +305,17 @@ function calculartotal() {
 
 }
 
+
+
+
+
+// $('.producto').mouseenter(function(){
+//     $('.imagenproducto').css({
+//       "transform": "scale(1.2,1.2)"
+//     });
+//   });
+//   $('.producto').mouseleave(function(){
+//     $('.imagenproducto').css({
+//       "transform": "scale(1.0,1.0)"
+//     });
+//   });
