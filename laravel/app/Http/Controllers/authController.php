@@ -41,7 +41,7 @@ class authController extends Controller
         // Encolamos el email de activación de la cuenta
         //$this->dispatch(new \App\Jobs\SendAccountActivationEmail($user));
  
-        return redirect()->route('login');
+        return redirect()->route('client');
     }
 
     public function logout(){

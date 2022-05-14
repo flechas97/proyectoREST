@@ -3,12 +3,14 @@ var addproducto = document.getElementsByClassName("producto");
 var borrarlocal = document.getElementById("borrarlocal");
 var lista = document.getElementById("lista");
 var imagen = document.getElementsByClassName("imagenproducto");
+var añadido = document.getElementsByClassName('añadido')
 // borrarlocal.addEventListener("click",()=>{
 //     localStorage.clear()
 // })
 for (let i = 0; i < addcesta.length; i++) {
     if(localStorage.getItem(addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent)){
         addcesta[i].disabled = true
+        añadido[i].style.display = "block"
     }
     var div_principal = addcesta[i].parentNode.parentNode.parentNode;
     div_principal.addEventListener("mouseenter",()=>{
@@ -20,6 +22,7 @@ for (let i = 0; i < addcesta.length; i++) {
     })
     addcesta[i].style.display = "none";
     addproducto[i].addEventListener("click",()=>{
+        añadido[i].style.display = "block"
         console.log(addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent)
         var producto = addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent;
         var precio = addcesta[i].parentNode.parentNode.childNodes[5].childNodes[1].textContent;
@@ -305,7 +308,10 @@ function calculartotal() {
 
 }
 
-
+var enviar_cesta = document.getElementsByClassName('enviar_cesta') 
+enviar_cesta[0].addEventListener("click",()=>{
+    localStorage.clear()
+})
 
 
 

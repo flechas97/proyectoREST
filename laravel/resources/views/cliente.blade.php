@@ -249,15 +249,16 @@
             @foreach ($detalle as $detallitos)
                 @if ($detallitos->id_pedido == $pedido->id)
                 <div class="contenido_pedido">
-                    <p><b>id detallle : {{$detallitos->id}}</b></p> 
-                    <p>Cantidad : {{$detallitos->cantidad}}</p> 
                     @foreach ($productos as $producto)
                         @if ($producto->id == $detallitos->id_producto)
-                            <p>producto nombre {{$producto->nombre}}</p>
-                            <p>Precio del detalle: {{$detallitos->cantidad * $producto->precio}}€</p>
-                        </div>
+                            <p><b>Producto</b>  {{$producto->nombre}}</p>
+                            <p><b>Precio:</b> {{$detallitos->cantidad * $producto->precio}}€</p>
+                        
                         @endif
                     @endforeach
+                    <p><b>Cantidad :</b> {{$detallitos->cantidad}}</p> 
+                    </div>
+                    {{-- <p><b>id detallle : {{$detallitos->id}}</b></p>  --}}
                 @endif
             @endforeach
         @endforeach
@@ -272,7 +273,9 @@
         <!-- <button id="ver_cesta"></button> -->
         <div class="productos">
     @foreach($productos as $producto)
+
         <div class="producto">
+            <div class="añadido"></div>
             <div class="row">
                 <div class="col-12">
                     <img src="{{route('imagen',['id'=>$producto->id])}}" alt="" class="imagenproducto">
@@ -290,6 +293,7 @@
             </div>
             
         </div>
+        
     @endforeach
     
 </div>
@@ -328,12 +332,12 @@
         </div>
         @if(!session()->get('user'))
         <div class="row ventanalogin">
-            <div class="col-6 tarjetalogin">
+            <div class="col-lg-6 col-12 tarjetalogin">
                 
                     <form action="{{route('logincliente')}}" method="post">
                             @csrf
                         <div class="col-12 text-center">
-                            <h2 class= "mt-3">Inicio de sesion</h2>
+                            <h2 class= "mt-lg-3 mt-0">Inicio de sesion</h2>
                         </div>
                         <div class="col-12 text-center">
                             <input type="text" name="email" id="" class="formulariossesion" placeholder="Email...*">
@@ -346,12 +350,12 @@
                         </div>
                     </form>
             </div>
-            <div class="col-6 tarjetalogin">
+            <div class=" col-lg-6 col-12 tarjetalogin">
                         
                     <form action="{{route('registrar-in')}}" method="post">
                         @csrf
                         <div class="col-12 text-center">
-                            <h2 class= "mt-3">Registro de sesion</h2>
+                            <h2 class= "mt-lg-3 mt-0">Registro de sesion</h2>
                         </div>
                         <div class="col-12 text-center">
                             <input type="text" name="name" id="" class="formulariossesion" placeholder="Usuario...*">

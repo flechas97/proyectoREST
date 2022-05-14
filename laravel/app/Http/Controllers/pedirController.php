@@ -10,6 +10,7 @@ class pedirController extends Controller
 {
     public function index(){
         $productos = DB::select(DB::raw('select * from productos where borrado = 0'));
+        // dd($productos);
         return $productos;
     }
     public function mandar(Request $request ){
@@ -40,7 +41,7 @@ class pedirController extends Controller
 
         $data = DB::select(DB::raw('select * from pedidos where id_user="'.session()->get('id_user').'"'));
         $total_detalles = [];
-        $productos = DB::table('productos')->get();
+        $productos = DB::table('productos')->where('borrado','0')->get();
         for ($i=0; $i <count($data) ; $i++) { 
             $detalles = DB::table('detalles_pedidos')->where('id_pedido',$data[$i]->id)->get();
             array_push($total_detalles,$detalles);

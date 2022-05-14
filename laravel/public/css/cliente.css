@@ -499,9 +499,9 @@ a{
     }
     .tarjetalogin{
         width: 50%;
-        height: 100%;
-        /* margin-top: 5vh; */
-        background-color: #EAEA7F;
+        height: 50%;
+        margin-top: 260px;
+        /* background-color: #EAEA7F; */
         border-radius: 8px;
         /* overflow: hidden; */
         z-index: 25 !important;
@@ -509,7 +509,9 @@ a{
     .ventanalogin{
         height: 100%;
         position: relative;
-        bottom: 31%;
+        bottom: 21%;
+        background-image: url('papel.jpg');
+        background-position: center;
     }
     .controlsesion{
         width: 100%;
@@ -781,6 +783,35 @@ font-size: 20px;
 }
 
 @media (max-width: 500px) {
+    .ventanalogin{
+        height: 100%;
+        position: relative;
+        bottom: 15%;
+        background-image: url('papel.jpg');
+        background-position: left;
+        background-size: 200% 120%;
+        padding-left: 70px;
+        overflow-y: scroll;
+    }
+    .formulariossesion{
+        width: 80%;
+        background-color: #fdb07500;
+        margin-top: 10px;
+        border: 2px solid #c75600;
+        padding-left: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 20px;
+    }
+    .tarjetalogin{
+        width: auto;
+        height: auto;
+        margin-top: 0px;
+        /* background-color: #EAEA7F; */
+        border-radius: 8px;
+        /* overflow: hidden; */
+        z-index: 25 !important;
+    }
     .bannerregalo{
         width: 100%;
         margin: auto;
@@ -851,6 +882,7 @@ font-size: 20px;
     background-size: contain;
     background-position: center;
     /* overflow: scroll; */
+    z-index: 999 !important;
 }
 
 .subtitulopedido{
@@ -868,6 +900,8 @@ font-size: 20px;
 }
 .contenido_pedido{
     margin: 0px 50px;
+    border: 1px solid black;
+    width: 300px;
 }
 .cajapedidos{
     margin-left: 20%;
@@ -887,7 +921,7 @@ font-size: 20px;
     background-image: url('papel.jpg');
     background-size: contain;
     background-position: center;
-z-index: 999;
+    z-index: 999;
 }
 .abrir_pedidos{
     /* position: fixed;
@@ -972,6 +1006,7 @@ z-index: 50 !important;
     right: 0;
     transition: 1s ease all;
     transform: translateX(0%);
+    z-index: 100 !important;
 }
 @media (max-width: 1400px) {
     .abrir_pedidos{
@@ -1031,6 +1066,7 @@ z-index: 50 !important;
         right: 0;
         transition: 1s ease all;
         transform: translateX(0%);
+        z-index: 0 !important;
     }
     #btn_inicio_sesion{
         position: relative;
@@ -1076,7 +1112,7 @@ z-index: 50 !important;
         top: 230PX;
         left: 30PX;
         float: right;
-        z-index: 999;
+        z-index: 999 !important;
         transform: translateX(0%);
         background-color: #bfbfbf00;
         border-style: none;
