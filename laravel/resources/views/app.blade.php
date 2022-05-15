@@ -28,8 +28,10 @@
                         </div>
                         @auth
                         <div class="articulo articulo_menu">
-                            <a href="{{route('welcome')}}"><button class='enlace enlace_menu'>@lang('Zona Cliente')</button></a>
+                            <a href="{{route('client')}}"><button class='enlace enlace_menu'>@lang('Zona Cliente')</button></a>
                         </div>
+                        @if (@Auth::user()->hasRole('dios'))
+                        
                         <div class="articulo articulo_menu">
                             <a href="{{route('welcome')}}"><button class='enlace enlace_menu'>@lang('Panel de control')</button></a>
                         </div>
@@ -51,6 +53,7 @@
                                 </div>
                             </div>
                         </div>
+                        @endif
                         <div class="articulo articulo_menu">
                         <!-- <form action="welcome" method="post"> -->
                     <!-- <a href="" class="text-light">cerrar</a> -->

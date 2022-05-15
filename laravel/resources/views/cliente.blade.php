@@ -267,13 +267,11 @@
 </div>
 </div>
   <!-- END Subventana MIS PEDIDOS -->
-
         <button id="abrir_pedidos"></button>
         {{-- <button id="borrarlocal">Borrar local</button> --}}
         <!-- <button id="ver_cesta"></button> -->
         <div class="productos">
     @foreach($productos as $producto)
-
         <div class="producto">
             <div class="añadido"></div>
             <div class="row">
@@ -286,16 +284,12 @@
                 <div class="col-12 d-none">
                     <h3>{{$producto->precio}}€</h3>
                 </div>
-               
                 <div class="col-12">
                     <button class="addcesta">Añadir a la cesta</button>
                 </div>
             </div>
-            
         </div>
-        
     @endforeach
-    
 </div>
 <div id="despcesta">
 <button id="ver_cesta">ver cesta</button>
@@ -313,8 +307,6 @@
     </form>
 </div>
     </div>
-
-
     <div id="inicio_sesion">
         @if(!session()->get('user'))
         <button id="btn_inicio_sesion">Abrir Sesion</button>

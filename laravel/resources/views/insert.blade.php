@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{asset('css/fondo_elim.css')}}">
 @endsection
 @section('content')
-@auth
+@if (@Auth::user()->hasRole('dios'))
 
 <style>  
 
@@ -33,7 +33,7 @@
 @endif
 <div class="row justify-content-center mt-4">
     <div class="col-12 col-lg-5 col-sm-12">
-    @if (@Auth::user()->hasRole('dios'))
+ 
         <form action="insert" method="post">
             @csrf
             <!-- <div class="row">
@@ -67,7 +67,7 @@
             </div>
                 
         </form><br>
-    @endif
+
     <div class="col-12 titulotarjetas">
                  <!-- <label for="">Nombre: </label> -->
             <h5>@lang('Añadir pedido')</h5>            
@@ -177,7 +177,7 @@
             </div>
             <div class="col-4 col-lg-4 celdas text-center">
             <!-- <p class="datos_columnas">{{$ins->created_at}}</p> -->
-                @if (@Auth::user()->hasRole('dios'))
+               
                 <form action="{{route('change-show',[$ins->id])}}" method="get">
                     <button class="btn btn-success acciones"><i class="bi bi-pencil-fill"></i></button>
                 </form>
@@ -197,7 +197,7 @@
                 <input type="hidden" name="id_user" value = "{{$ins->id_user}}">
                     <button class="btn btn-info acciones"><i class="bi bi-printer-fill"></i></button>
                 </form>
-                @endif
+              
             </div>
         </div>
         @endforeach
@@ -205,9 +205,13 @@
 @else
 <h5>No hay resultados</h5>
 @endif
+@else
+<h1 class="text-light">No tienes permisos para estar aqui Vuelve a la zona cliente</h1>
+
+@endif
     </div>
 </div>
-@endauth
+
 <script src="js/insert.js"></script>
 <script src="js/elim.js"></script>
 

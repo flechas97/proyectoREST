@@ -105,8 +105,8 @@
     }
 
 </style>
-@auth
-
+@if (@Auth::user()->hasRole('dios'))
+    
 <div class="cajaswelcome">
     <div class="tarjetawelcome amarillo">
         <h5>@lang('Pedidos Pendientes')..</h5>
@@ -163,7 +163,9 @@
         <h3 class= "ultpedidosdash">@lang('ULTIMOS PEDIDOS')</h3>
     </div>
 </div>
-@endauth
+@else
+<h1 class="text-light">No tienes permisos para estar aqui Vuelve a la zona cliente</h1>
+@endif
 
 @endsection
 
