@@ -108,7 +108,7 @@ Route::post('/cliente/login', [authclienteController::class, 'logincliente'])->n
 Route::view('/pedir', "/pedir")->middleware('auth');
 Route::get('/pedir', [pedirController::class, 'index'])->name('empezar_pedido')->middleware('auth');
 Route::post('/pedir', [pedirController::class, 'mandar'])->name('mandar_pedido')->middleware('auth');
-
+Route::post('/añadir_sugerencia', [pedirController::class, 'añadir_sugerencia'])->name('añadir_sugerencia')->middleware('auth');
 Route::view('/pedircompletado', "/pedircompletado")->middleware('auth');
 
 Route::view('/mispedidos', "/mispedidos")->middleware('auth');

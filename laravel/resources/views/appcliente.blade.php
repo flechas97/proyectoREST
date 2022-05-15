@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="css/cliente.css">
     <title>Document</title>
 </head>
-<body>
-    
+<body data-parallax="scroll" data-image-src="{{URL::asset('css/fondoparallax.jpg')}}">
+   
 <header class="row justify-content-center">
         <div class="col-7 col-lg-7">
             <div class="row">
@@ -175,7 +175,7 @@
         </div>
         </div>
     </footer>
-
+    {{-- <div class="loader"></div> --}}
     
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="js/scroll.js"></script>

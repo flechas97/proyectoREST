@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+@font-face {
+    font-family: 'dalek';
+    src: url('dalek.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
 *{
     margin: 0px;
     padding: 0px;
     /* font-family: 'Patrick Hand', cursive; */
-    font-family: 'Lora', serif;
+    font-family: 'dalek', serif;
 }
 /* width */
 ::-webkit-scrollbar {
@@ -29,11 +36,27 @@
     background: #555;
   }
 body {
-background-image: url('pastel.png');
+/* background-image: url('pastel.png');
 background-attachment: fixed;
-background-size: 500px;
+background-size: 500px; */
+/* background-image: url('fondoparallax.jpg'); */
+    /* min-height: 400px; */
+    /* background: transparent; */
 }
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-image: url('loading.gif');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 
+    /* opacity: .8; */
+}
 header{
     display: none !important;
     transition: 1s ease all;
@@ -98,6 +121,9 @@ a{
       width: 70%;
       height: 770px;
       background-color: white;
+      background-image: url('fondo_pedir.jpg');
+      background-size: cover;
+      background-position: -150px;
       margin: auto;
       box-shadow: 0px 5px 5px 3px rgba(102, 102, 102, 0.384);
       border: 2px solid black;
@@ -157,7 +183,7 @@ a{
     width: 100%;
     height: auto;
     /* background-color: #F24A72; */
-    margin-bottom: 150px;
+    /* margin-bottom: 150px; */
 }
 .rowsecion{
     width: 90%;
@@ -166,9 +192,13 @@ a{
 .tarjetassecion{
     width: 90%;
     height: 500px;
-    background-color: white;
+    background-image: url('fondo_pedir.jpg');
+    background-size: cover;
+    background-position: -90px;
     margin: 20px;
     padding-top: 5px;
+    margin-top: 150px;
+margin-bottom: 150px;
     overflow: hidden;
     box-shadow: 0px 5px 5px 3px rgba(102, 102, 102, 0.384);
 }
@@ -634,7 +664,7 @@ a{
     position: absolute;
     font-weight: bold;
      top: 400PX; 
-     margin-left: 40%; 
+     margin-left: 43%; 
     color: white;
 }
 
@@ -710,10 +740,51 @@ a{
     width: 60px;
     margin: 4px;
 }
-.tarjetaregalo{
-    background-color: white;
+.header_madera{
+    position: fixed;
+    top: 0px;
     width: 100%;
-    height: 700px;
+    height: 500px;
+    background-image: url('fondoheader.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    z-index: 1;
+}
+.logo{
+    position: fixed;
+    top:70px;
+    left: 52%;
+    width: 150px;
+    height: 150px;
+    background-image: url('logo.png');
+    background-size: cover;
+    background-position: center;
+}
+.tarjetaregalo{
+    /* background-image: url(fondoseccion.png);
+    background-position: center;
+    background-size: 1; */
+        /* min-height: 400px; 
+     background: transparent; */
+     background-image: url('fondoseccion.png'); 
+  
+    background-size: 100%;
+     background-position: center;
+     box-shadow: 0px 0px 20px 20px black;
+     /* background-color: red; */
+
+    width: 100%;
+    height: 760px;
+    /* position: relative;
+    top: -110px; */
+    color: black;
+}
+.contenidoregalo{
+    margin-top: 250px;
+    background-color: rgba(59, 59, 59, 0.233);
+    border-radius: 8px;
+    padding: 10px;
 }
 .blob{
     width: 700px;
@@ -721,9 +792,10 @@ a{
 .bannerregalo{
     width: 65%;
     margin: auto;
+    height: 100%;
 }
 .titulotarjetaregalo{
-    margin-top: 5em;
+    /* margin-top: 5em; */
     font-size: 50px;
     font-weight: bold;
 }
@@ -783,6 +855,35 @@ font-size: 20px;
 }
 
 @media (max-width: 500px) {
+    .logo{
+        position: fixed;
+        top:30px;
+        left: 43%;
+        width: 70px;
+        height: 70px;
+        background-image: url('logo.png');
+        background-size: cover;
+        background-position: center;
+    }
+    .contenidoregalo{
+        margin-top: 0px;
+        background-color: rgba(59, 59, 59, 0.233);
+        border-radius: 8px;
+        padding: 10px;
+    }
+    .tarjetassecion{
+        width: 90%;
+        height: 500px;
+        background-image: url('fondo_pedir.jpg');
+        background-size: cover;
+        background-position: -90px;
+        margin: 20px;
+        padding-top: 5px;
+        margin-top: 25px;
+    margin-bottom: 25px;
+        overflow: hidden;
+        box-shadow: 0px 5px 5px 3px rgba(102, 102, 102, 0.384);
+    }
     .ventanalogin{
         height: 100%;
         position: relative;
@@ -980,6 +1081,7 @@ border-style: none;
     background-color: red;
     transform: translateY(-99%);
     transition: 1s ease all;
+    z-index: 1;
 }
 #btn_inicio_sesion{
 position: relative;
@@ -1007,6 +1109,33 @@ z-index: 50 !important;
     transition: 1s ease all;
     transform: translateX(0%);
     z-index: 100 !important;
+}
+.formulario_sugerencias{
+    margin-left: 14%;
+    margin-top: 200px;
+}
+#asunto_form{
+    width: 500px;
+    margin-bottom: 50px;
+    background-color: #36363600;
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 50px;
+}
+#texto_form{
+    width: 500px;
+    background-color: #36363600;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+#boton_form{
+    background-color: #36363600;
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 50px;
+    width: 100px;
+    font-size: 18px;
+    font-weight: bold;
 }
 @media (max-width: 1400px) {
     .abrir_pedidos{
@@ -1055,6 +1184,17 @@ z-index: 50 !important;
         }
 }
 @media (max-width: 500px) {
+    .header_madera{
+        position: fixed;
+        top: 0px;
+        width: 100%;
+        height: 500px;
+        background-image: url('fondoheader.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top;
+        z-index: 1;
+    }
     #despcesta{
         width: 100%;
         height: 100%;

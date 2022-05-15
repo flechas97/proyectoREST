@@ -48,5 +48,10 @@ class pedirController extends Controller
         }
         return view('cliente',['datos'=>$data,'detalles'=>$total_detalles,'productos'=>$productos,'productos_pedir'=>$productos_pedir]);
     }
+    public function añadir_sugerencia(Request $request){
+        // dd($request);
+         DB::insert('insert into sugerencias (id_user, asunto, descripcion, created_at) values (?, ?, ?, ?)',array(session()->get('id_user'), $request->asunto,$request->contenido,date('Y/m/d')));
+        return redirect()->route('client');
+    }
     //
 }

@@ -325,3 +325,20 @@ enviar_cesta[0].addEventListener("click",()=>{
 //       "transform": "scale(1.0,1.0)"
 //     });
 //   });
+function carga() {
+    if(sessionStorage.getItem('cesta')!=1){
+        $(".loader").fadeOut("slow")
+}else{
+    $(".loader").fadeOut(0)
+}
+    // console.log("asd")
+}
+carga();
+// $(window).load(function() {
+//     if(sessionStorage.getItem('cesta')!=1){
+//         setTimeout( carga, 2000)
+//     }else{
+//         carga();
+//     }
+    
+// });

@@ -4,7 +4,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 @endsection
 @section('content')
-
+<div class="header_madera">
+    <div class="logo"></div>
+</div>
     @if ($message = Session::get('error'))
     <div class="row justify-content-center">
         <div class="col-3">
@@ -42,7 +44,7 @@
             <h1 class="textovideoprin">Los mejores en lo clasico</h1>
             <button class="botonvideo">Pedir</button>
         </div>
-        <video src="{{URL::asset('css/video.mp4')}}" mz-autoplay-scroll="" playsinline="" autoplay="" loop="" mz-always-muted="" muted="" width="100%"></video>
+        <video src="{{URL::asset('css/video3.mp4')}}" mz-autoplay-scroll="" playsinline="" autoplay="" loop="" mz-always-muted="" muted="" width="100%"></video>
        
     </div>
     {{-- <div class="carousel-item">
@@ -52,6 +54,8 @@
       <div class="amarillo"></div>
     </div> --}}
   </div>
+</div>
+</div>
   {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
@@ -85,11 +89,11 @@
     </div>
 </div> --}}
 <!-- Banner parallax -->
-<div id="scene">
+{{-- <div id="scene">
   <div data-depth="0" class="fondo2"></div>
   <div data-depth="1.1"><img src="{{URL::asset('css/hamburguesa.jpg')}}" alt="" class="fondo"></div>
   <div data-depth="2.0" class="capa">My first Layer!</div>
-</div>
+</div> --}}
 <!-- <div class="parallax-window" data-parallax="scroll" data-image-src="{{URL::asset('css/hamburguesa.jpg')}}"></div> -->
 
 <!-- Seccion de tarjetas -->
@@ -124,15 +128,17 @@
                 <img src="{{URL::asset('css/blob.png')}}" alt="" class="blob">
             </div>
             <div class="col-lg-6 col-12 col-sm-12 text-center">
+                <div class="contenidoregalo">
                     <h1 class="titulotarjetaregalo">Tarjeta regalo</h1>
                     <p class="textotarjetaregalo">Presenta una tarjeta regalo a tu familia o amigos!</p>
                     <button class="botontarjetaregalo">Comprar tarjeta regalo</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="secion">
-        <div class="row justify-content-center rowsecion mt-5">
+    <section class="secion" data-parallax="scroll" data-image-src="{{URL::asset('css/fondoparallax.jpg')}}">
+        <div class="row justify-content-center rowsecion">
             <div class="col-12 col-lg-4">
                 <div class="tarjetassecion">
                     <div class="imagen">
@@ -313,12 +319,24 @@
         @else
         <button id="btn_inicio_sesion"></button>
         @endif
+
         <div id="sugerencias">
                     <button class="abrir_sugerencias" id="btn_sugerencias">Ver SUgerencias</button>
                     <div class="formulario_sugerencias">
-                        <form action="" method="post">
-                            <input type="text" name="" id="">
-                            
+                        <h2>Formulario Sugerencias</h2>
+                        <form action="{{route('añadir_sugerencia')}}" method="post">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12">
+                                    <input type="text" name="asunto" id="asunto_form" placeholder="Asunto">
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="contenido" id="texto_form" cols="30" rows="10" placeholder="Contenido sugerencia..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <input type="submit" value="enviar" id="boton_form">
+                                </div>
+                            </div>
                         </form>
                     </div>
         </div>

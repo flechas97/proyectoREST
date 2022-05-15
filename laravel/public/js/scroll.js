@@ -93,8 +93,8 @@ var zindex = 0;
   btn_inicio_sesion.addEventListener('click',()=>{
     if(inicio_sesion.style.transform == 'translateY(-99.9%)'){
       inicio_sesion.style.transform = 'translateY(0%)'
-      inicio_sesion.style.zIndex = zindex
-      btn_inicio_sesion.style.zIndex = zindex
+      // inicio_sesion.style.zIndex = zindex
+      // btn_inicio_sesion.style.zIndex = zindex
       abrir_pedidos.style.display = "none"
       zindex++
     }else{
