@@ -60,7 +60,7 @@
 .addcesta:disabled{
     opacity: 20%;
 }
-.productos{
+.productos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -68,7 +68,7 @@
     width: 70%;
     margin: auto;
     position: relative;
-    top: -200px;
+    top: 0px;
     overflow-y: scroll;
 }
 #cesta{

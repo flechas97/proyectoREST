@@ -30,22 +30,21 @@
     </div>    
     @endif
 
-    <div id="scrollmargin"></div>
+    {{-- <div id="scrollmargin"></div> --}}
     <div class="carrousel ">
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
   {{-- <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div> --}}
   <div class="carousel-inner">
-    <div class="carousel-item active"data-bs-interval="100000">
+    <div class="carousel-item active" data-bs-interval="100000">
         <div class="contenidovideoprin">
-            <h1 class="textovideoprin">Los mejores en lo clasico</h1>
+            <h1 class="textovideoprin">No dejes para mañana lo que puedas hacer <b>HOY</b></h1>
             <button class="botonvideo">Pedir</button>
         </div>
         <video src="{{URL::asset('css/video3.mp4')}}" mz-autoplay-scroll="" playsinline="" autoplay="" loop="" mz-always-muted="" muted="" width="100%"></video>
-       
     </div>
     {{-- <div class="carousel-item">
       <div class="azul"></div>
@@ -53,7 +52,7 @@
     <div class="carousel-item">
       <div class="amarillo"></div>
     </div> --}}
-  </div>
+
 </div>
 </div>
   {{-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -239,7 +238,7 @@
 
 
     <!-- Subventana MIS PEDIDOS -->
-    <div id="pedidos">
+    <div id="pedidos"><button id="volver_pedidos">Volver</button>
         <h1 class="titulo_pedidos">Completa Tu Pedido</h1>
     <div id="pedidosdespl">
     <button class="abrir_pedidos" id="mis_pedidos"></button>
@@ -315,7 +314,7 @@
     </div>
     <div id="inicio_sesion">
         @if(!session()->get('user'))
-        <button id="btn_inicio_sesion">Abrir Sesion</button>
+        <button id="btn_inicio_sesion"></button>
         @else
         <button id="btn_inicio_sesion"></button>
         @endif
@@ -342,8 +341,9 @@
         </div>
         @if(!session()->get('user'))
         <div class="row ventanalogin">
+            
             <div class="col-lg-6 col-12 tarjetalogin">
-                
+                <button id="volver_sesion">Volver</button>
                     <form action="{{route('logincliente')}}" method="post">
                             @csrf
                         <div class="col-12 text-center">
@@ -386,6 +386,7 @@
             </div>
         </div>
         @else
+        <button id="volver_sesion">Volver</button>
         <form action="{{route('registrar-out')}}" method="post">
             @csrf
             <button id="iniciarses" class="btn_mav">Cerrar sesion</button>
