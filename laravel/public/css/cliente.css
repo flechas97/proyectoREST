@@ -577,10 +577,10 @@ margin-bottom: 150px;
         transform: rotatez(20deg);
     }
     .formulariossesion{
-        width: 80%;
+        width: 60%;
         background-color: #fdb07500;
         margin-top: 30px;
-        border: 2px solid #c75600;
+        border: 2px solid #000000;
         padding-left: 10px;
         padding-top: 5px;
         padding-bottom: 5px;
@@ -588,9 +588,10 @@ margin-bottom: 150px;
     }
     .submitformulariosesion{
         float: right;
-        margin-right: 54px;
+        margin-right: 190px;
         border-style: none;
-        background-color: #FDAF75;
+        background-color: #fdb07500;
+        border: #000000 2px solid;
         font-size: 20px;
         margin-top: 30px;
         margin-bottom: 30px;
@@ -935,11 +936,18 @@ font-size: 20px;
     width: 315px;
     height: 340px;
 }
-.abrir_sugerencias{
+.abrir_sugerencias {
     position: relative;
+    width: 200px;
+    height: 214px;
     top: 100px;
-    left: -80px;
+    left: -60px;
     z-index: 888;
+    background-image: url(boton_sugerencias.png);
+    background-position: center;
+    background-size: cover;
+    background-color: #00000000;
+    border-style: none;
 }
 #pedidos{
     width: 100%;
@@ -971,7 +979,10 @@ font-size: 20px;
     height: 100%;
     position: fixed;
     top: 0px;
-    background-color: red;
+    /* background-color: red; */
+    background-image: url('fondo_pedir.jpg');
+    background-size: cover;
+    background-position: center;
     transform: translateY(-99%);
     transition: 1s ease all;
     z-index: 1;
@@ -1005,7 +1016,7 @@ font-size: 20px;
 }
 .formulario_sugerencias{
     margin-left: 14%;
-    margin-top: 200px;
+    margin-top: -95px;
 }
 #asunto_form{
     width: 500px;
@@ -1216,7 +1227,7 @@ font-size: 20px;
         overflow-y: scroll;
     }
     .formulariossesion{
-        width: 80%;
+        width: 60%;
         background-color: #fdb07500;
         margin-top: 10px;
         border: 2px solid #c75600;
@@ -1229,6 +1240,7 @@ font-size: 20px;
         width: auto;
         height: auto;
         margin-top: 0px;
+        padding-left: 120px;
         /* background-color: #EAEA7F; */
         border-radius: 8px;
         /* overflow: hidden; */

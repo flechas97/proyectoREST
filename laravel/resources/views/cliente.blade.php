@@ -320,7 +320,7 @@
         @endif
 
         <div id="sugerencias">
-                    <button class="abrir_sugerencias" id="btn_sugerencias">Ver SUgerencias</button>
+                    <button class="abrir_sugerencias" id="btn_sugerencias"></button>
                     <div class="formulario_sugerencias">
                         <h2>Formulario Sugerencias</h2>
                         <form action="{{route('añadir_sugerencia')}}" method="post">
