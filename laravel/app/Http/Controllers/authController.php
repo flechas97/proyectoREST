@@ -32,6 +32,9 @@ class authController extends Controller
             $user->email= $request->email;
             $user->password= bcrypt($request->password);
             $user->remember_token = Str::random(10);
+            $user->telefono = $request->telefono;
+            $user->direccion = $request->direccion;
+            $user->codigo_postal = $request->codigo_postal;
             //$user->registration_token = str_random(60);
             $user->save();
             $user->assignRole('cliente');

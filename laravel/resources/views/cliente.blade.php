@@ -207,20 +207,32 @@
                     <form action="{{route('registrar-in')}}" method="post">
                         @csrf
                         <div class="col-12 text-center">
-                            <h2 class= "mt-3">Registro de sesion</h2>
+                            <h2 class= "mt-3">Registro de sesiona</h2>
                         </div>
                         <div class="col-12 text-center">
-                            <input type="text" name="name" id="" class="formulariossesion" placeholder="Usuario...*">
+                            <input type="text" name="name" class="formulariossesion" placeholder="Usuario...*">
                         </div>
                         <div class="col-12 text-center">
-                            <input type="text" name="email" id="" class="formulariossesion" placeholder="Email...*">
+                            <input type="text" name="email" class="formulariossesion" placeholder="Email...*">
                         </div>
                         <div class="col-12 text-center">
-                            <input type="text" name="password" id="" class="formulariossesion" placeholder="Contraseña...*">
+                            <input type="text" name="password" class="formulariossesion" placeholder="Contraseña...*">
                         </div>
                         <div class="col-12 text-center">
-                            <input type="text" name="password_confirmation" id="" class="formulariossesion" placeholder="Confirmar Contraseña...*">
+                            <input type="text" name="password_confirmation" class="formulariossesion" placeholder="Confirmar Contraseña...*">
                         </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="telefono" class="formulariossesion" placeholder="Telefono...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="direccion" class="formulariossesion" placeholder="Direccion...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="codigo_postal" class="formulariossesion" placeholder="Codigo postal...*">
+                        </div>
+                        {{-- Numero de telefono
+                            direccion
+                            codigo postal --}}
                         <div class="col-12 text-center">
                             <input type="submit" value="Iniciar" class="submitformulariosesion">
                         </div>
@@ -380,6 +392,15 @@
                             <input type="text" name="password_confirmation" id="" class="formulariossesion" placeholder="Confirmar Contraseña...*">
                         </div>
                         <div class="col-12 text-center">
+                            <input type="text" name="telefono" class="formulariossesion" placeholder="Telefono...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="direccion" class="formulariossesion" placeholder="Direccion...*">
+                        </div>
+                        <div class="col-12 text-center">
+                            <input type="text" name="codigo_postal" class="formulariossesion" placeholder="Codigo postal...*">
+                        </div>
+                        <div class="col-12 text-center">
                             <input type="submit" value="Iniciar" class="submitformulariosesion">
                         </div>
                     </form>
@@ -387,11 +408,59 @@
         </div>
         @else
         <button id="volver_sesion">Volver</button>
-        <form action="{{route('registrar-out')}}" method="post">
-            @csrf
-            <button id="iniciarses" class="btn_mav">Cerrar sesion</button>
-            <p class="usuario">Usuario: {{session()->get('user')}}</p>
-        </form>
+        <div class="row justify-content-center">
+            <div class="col-8">
+                <div class="row">
+                    <div class="col-12 header_perfil p-2">
+                        <h1 class="pt-2 titulo_perfil">Datos del perfil</h1>
+                    </div>
+                    <div class="col-6 align-items-center border border-dark contenido_perfil">
+                        <h2>Nombre:</h2>
+                    </div>
+                    <div class="col-6  align-items-center border border-dark contenido_perfil">
+                        <h5>{{$usuario[0]->name}}</h5>
+                    </div>
+                    {{-- separador --}}
+                    <div class="col-6 align-items-center border border-dark contenido_perfil">
+                        <h2>Correo:</h2>
+                    </div>
+                    <div class="col-6  align-items-center border border-dark contenido_perfil">
+                        <h5>{{$usuario[0]->email}}</h5>
+                    </div>
+                     {{-- separador --}}
+                     <div class="col-6 align-items-center border border-dark contenido_perfil">
+                        <h2>Telefono:</h2>
+                    </div>
+                    <div class="col-6  align-items-center border border-dark contenido_perfil">
+                        <h5>{{$usuario[0]->telefono}}</h5>
+                    </div>
+                     {{-- separador --}}
+                     <div class="col-6 align-items-center border border-dark contenido_perfil">
+                        <h2>Direccion:</h2>
+                    </div>
+                    <div class="col-6 align-items-center border border-dark contenido_perfil">
+                        <h5>{{$usuario[0]->direccion}}</h5>
+                    </div>
+                     {{-- separador --}}
+                     <div class="col-6 align-items-center border border-dark contenido_perfil">
+                        <h2>Codigo postal:</h2>
+                    </div>
+                    <div class="col-6 align-items-center border border-dark contenido_perfil">
+                        <h5>{{$usuario[0]->codigo_postal}}</h5>
+                    </div>
+                     {{-- separador --}}
+                     <div class="col-1">
+                        <form action="{{route('registrar-out')}}" method="post">
+                            @csrf
+                            <button id="iniciarses" class="btn_mav">Cerrar sesion</button>
+                        </form>
+                     </div>
+                </div>
+            </div>
+        </div>
+       
+        {{-- <p class="usuario">Usuario: {{session()->get('user')}}</p>
+        {{$usuario[0]->telefono}} --}}
         @endif
     </div>
 

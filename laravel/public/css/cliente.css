@@ -355,6 +355,22 @@ margin-bottom: 150px;
     position: relative;
     display: none;
 }
+.datos_perfil{
+    background-color: #00000042;
+}
+.contenido_perfil{
+    padding: 5px;
+}
+.header_perfil{
+    background-color: #00000059;
+    height: auto;
+    width: 100%;
+    margin-bottom: 25px;
+    
+}
+.titulo_perfil{
+    text-align: center;
+}
 .btn_mav{
     margin-top: 22px;
     width: 100px;
@@ -530,7 +546,7 @@ margin-bottom: 150px;
     .tarjetalogin{
         width: 50%;
         height: 50%;
-        margin-top: 13%;
+        margin-top: 2%;
         /* background-color: #EAEA7F; */
         border-radius: 8px;
         /* overflow: hidden; */
@@ -1134,6 +1150,8 @@ font-size: 20px;
             width: 476px;
         }
 }
+
+/*Aqui empieza la resolucion para movil a partir de 500px*/
 @media (max-width: 500px) {
   
     .productos {
@@ -1355,3 +1373,4 @@ font-size: 20px;
     }
 }
 
+/*Aqui Termina la resolucion para movil a partir de 500px*/
