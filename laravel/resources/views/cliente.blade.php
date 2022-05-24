@@ -288,7 +288,112 @@
         {{-- <button id="borrarlocal">Borrar local</button> --}}
         <!-- <button id="ver_cesta"></button> -->
         <div class="productos">
-    @foreach($productos as $producto)
+            <div class="row w-100">
+                <div class="col-3">
+                    <h1 class="text-center menu_plato" id="btn_primeros">Primeros</h1>
+                </div>
+                <div class="col-3">
+                    <h1 class="text-center menu_plato" id="btn_segundos">Segundos</h1>
+                </div>
+                <div class="col-3">
+                    <h1 class="text-center menu_plato" id="btn_postres">Postres</h1>
+                </div>
+                <div class="col-3">
+                    <h1 class="text-center menu_plato" id="btn_bebidas">Bebidas</h1>
+                </div>
+            </div>
+            
+          
+            
+            
+          <div id="primeros">
+            @foreach($primeros as $primero)
+            <div class="producto">
+                <div class="añadido"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{route('imagen',['id'=>$primero->id])}}" alt="" class="imagenproducto">
+                    </div>
+                    <div class="col-12">
+                        <h3>{{$primero->nombre}}</h3>
+                    </div>
+                    <div class="col-12 d-none">
+                        <h3>{{$primero->precio}}€</h3>
+                    </div>
+                    <div class="col-12">
+                        <button class="addcesta">Añadir a la cesta</button>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+          </div>
+          <div id="segundos">
+            
+            @foreach($segundos as $segundo)
+            <div class="producto">
+                <div class="añadido"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{route('imagen',['id'=>$segundo->id])}}" alt="" class="imagenproducto">
+                    </div>
+                    <div class="col-12">
+                        <h3>{{$segundo->nombre}}</h3>
+                    </div>
+                    <div class="col-12 d-none">
+                        <h3>{{$segundo->precio}}€</h3>
+                    </div>
+                    <div class="col-12">
+                        <button class="addcesta">Añadir a la cesta</button>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+          </div>
+          <div id="postres">
+            
+            @foreach($postres as $postre)
+            <div class="producto">
+                <div class="añadido"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{route('imagen',['id'=>$postre->id])}}" alt="" class="imagenproducto">
+                    </div>
+                    <div class="col-12">
+                        <h3>{{$postre->nombre}}</h3>
+                    </div>
+                    <div class="col-12 d-none">
+                        <h3>{{$postre->precio}}€</h3>
+                    </div>
+                    <div class="col-12">
+                        <button class="addcesta">Añadir a la cesta</button>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+          </div>
+          <div id="bebidas">
+            
+            @foreach($bebidas as $bebida)
+            <div class="producto">
+                <div class="añadido"></div>
+                <div class="row">
+                    <div class="col-12">
+                        <img src="{{route('imagen',['id'=>$bebida->id])}}" alt="" class="imagenproducto">
+                    </div>
+                    <div class="col-12">
+                        <h3>{{$bebida->nombre}}</h3>
+                    </div>
+                    <div class="col-12 d-none">
+                        <h3>{{$bebida->precio}}€</h3>
+                    </div>
+                    <div class="col-12">
+                        <button class="addcesta">Añadir a la cesta</button>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+          </div>
+    {{-- @foreach($productos as $producto)
         <div class="producto">
             <div class="añadido"></div>
             <div class="row">
@@ -306,7 +411,7 @@
                 </div>
             </div>
         </div>
-    @endforeach
+    @endforeach --}}
 </div>
 <div id="despcesta">
 <button id="ver_cesta">ver cesta</button>

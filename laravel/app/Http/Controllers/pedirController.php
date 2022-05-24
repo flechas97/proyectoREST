@@ -41,12 +41,29 @@ class pedirController extends Controller
         $user = DB::select(DB::raw('select * from users where id="'.session()->get('id_user').'"'));
         $data = DB::select(DB::raw('select * from pedidos where id_user="'.session()->get('id_user').'"'));
         $total_detalles = [];
+
+
         $productos = DB::table('productos')->where('borrado','0')->get();
+        $primeros = DB::table('productos')->where('borrado','0')->where('plato','1')->get();
+        $segundos = DB::table('productos')->where('borrado','0')->where('plato','2')->get();
+        $postres = DB::table('productos')->where('borrado','0')->where('plato','3')->get();
+        $bebidas = DB::table('productos')->where('borrado','0')->where('plato','4')->get();
+
+
         for ($i=0; $i <count($data) ; $i++) { 
             $detalles = DB::table('detalles_pedidos')->where('id_pedido',$data[$i]->id)->get();
             array_push($total_detalles,$detalles);
         }
-        return view('cliente',['datos'=>$data,'detalles'=>$total_detalles,'productos'=>$productos,'productos_pedir'=>$productos_pedir,'usuario'=>$user]);
+        return view('cliente',['datos'=>$data,
+        'detalles'=>$total_detalles,
+        'productos'=>$productos,
+        'productos_pedir'=>$productos_pedir,
+        'usuario'=>$user,
+        'primeros'=>$primeros,
+        'segundos'=>$segundos,
+        'postres'=>$postres,
+        'bebidas'=>$bebidas
+    ]);
     }
     public function añadir_sugerencia(Request $request){
         // dd($request);

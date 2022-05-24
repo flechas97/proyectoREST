@@ -100,6 +100,14 @@ background: linear-gradient(0deg, rgba(255,119,0,1) 0%, rgba(132,134,255,1) 100%
                     <input type="text" name="cantidad" class="formulario" placeholder = "Cantidad" required>
                 </div>
                 <div class="col-12 centrar my-2">
+                    <select name="plato" id="">
+                        <option value="1">Primero</option>
+                        <option value="2">Segundo</option>
+                        <option value="3">Postre</option>
+                        <option value="4">Bebida</option>
+                    </select>                
+                </div>
+                <div class="col-12 centrar my-2">
                     <h5>Imagen</h5>
                     <input type="file" name="image" class="formulario" placeholder = "Cantidad" required>
                 </div>
@@ -152,7 +160,10 @@ background: linear-gradient(0deg, rgba(255,119,0,1) 0%, rgba(132,134,255,1) 100%
     <div class="col-1 cabeceras">
         <label for="">@lang('CANTIDAD')</label>
     </div>
-    <div class="col-6 cabeceras">
+    <div class="col-1 cabeceras">
+        <label for="">@lang('PLATO')</label>
+    </div>
+    <div class="col-5 cabeceras">
         <label for="">@lang('Acciones')</label>
     </div>
 
@@ -173,7 +184,10 @@ background: linear-gradient(0deg, rgba(255,119,0,1) 0%, rgba(132,134,255,1) 100%
             <div class="col-1 celdas">
             <p class="datos_columnas">{{$ins->stock}}</p>
             </div>
-            <div class="col-6 celdas">
+            <div class="col-1 celdas">
+                <p class="datos_columnas">{{$ins->plato}}</p>
+                </div>
+            <div class="col-5 celdas">
             <!-- <p class="datos_columnas">{{$ins->created_at}}</p> -->
                 @if (@Auth::user()->hasRole('dios'))
                 <form action="{{route('changeproducto-show',['id'=>$ins->id])}}" method="get">

@@ -77,6 +77,18 @@ form{
                     <input type="number" name="stock" class="formulario" placeholder = "Stock" value="{{$insert->stock}}" required>
                 </div>
                 <div class="col-12 centrar my-2">
+                    <select name="plato">
+                        <option value="1">Primero</option>
+                        <option value="2">Segundo</option>
+                        <option value="3">Postre</option>
+                        <option value="4">Bebida</option>
+                    </select>                
+                </div>
+                {{-- <div class="col-12 centrar my-2">
+                    <h5>Imagen</h5>
+                    <input type="file" name="image" class="formulario" placeholder = "Cantidad">
+                </div> --}}
+                <div class="col-12 centrar my-2">
                     <input type="submit"class = "formulario_btn w-25" value="Guardar">
                 </div>
             </div>

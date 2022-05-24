@@ -49,6 +49,7 @@ class productosController extends Controller
         $insert -> nombre = $request->nombre;
         $insert -> precio = $request->precio;
         $insert -> stock = $request->cantidad;
+        $insert -> plato = $request->plato;
         //$image = $_FILES['images']['tmp_name'];
         
         $imagen = file_get_contents($_FILES['image']['tmp_name']);
@@ -75,7 +76,8 @@ class productosController extends Controller
         ->update([
             'nombre'     => $request->nombre,
             'precio'   => $request->precio,
-            'stock' => $request -> stock
+            'stock' => $request -> stock,
+            'plato' => $request -> plato
         ]);
        return redirect()->route('almacen-show');
     }
