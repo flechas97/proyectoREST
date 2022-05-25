@@ -394,6 +394,30 @@ margin-bottom: 150px;
     color: white;
     cursor: pointer;
 }
+#volver_sesion{
+    width: 150px;
+    height: 75px;
+    background-image: url('volvebtn.png');
+    background-position: center;
+    background-size: cover;
+    background-color: #00000000;
+    border-style: none;
+    position: relative;
+    left: 5%;
+}
+#volver_pedidos{
+    width: 150px;
+    height: 75px;
+    background-image: url('volvebtn.png');
+    background-position: center;
+    background-size: cover;
+    background-color: #00000000;
+    border-style: none;
+    position: relative;
+    left: 5%;
+    position: relative;
+    z-index: 500;
+}
 .btn_mav{
     margin-top: 22px;
     width: 100px;
@@ -1089,7 +1113,7 @@ font-size: 20px;
         width: 70%;
         margin: auto;
         position: relative;
-        top: 0px;
+        top: -50px;
         overflow-y: scroll;
     }
 

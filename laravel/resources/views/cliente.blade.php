@@ -250,7 +250,7 @@
 
 
     <!-- Subventana MIS PEDIDOS -->
-    <div id="pedidos"><button id="volver_pedidos">Volver</button>
+    <div id="pedidos"><button id="volver_pedidos"></button>
         <h1 class="titulo_pedidos">Completa Tu Pedido</h1>
     <div id="pedidosdespl">
     <button class="abrir_pedidos" id="mis_pedidos"></button>
@@ -460,7 +460,7 @@
         <div class="row ventanalogin">
             
             <div class="col-lg-6 col-12 tarjetalogin">
-                <button id="volver_sesion">Volver</button>
+                <button id="volver_sesion"></button>
                     <form action="{{route('logincliente')}}" method="post">
                             @csrf
                         <div class="col-12 text-center">
