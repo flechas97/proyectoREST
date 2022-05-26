@@ -8,18 +8,15 @@
     <div class="logo"></div>
 </div>
     @if ($message = Session::get('error'))
-    <div class="row justify-content-center">
-        <div class="col-3">
-            <div class="alert alert-danger  alert-block w-100 text-center">   
+            <div class="alert alert-danger alert-block alert-dismissible text-center alertita">   
                 <strong>{{ $message }}</strong>
+               <a href=""><button>cerrar</button></a>
             </div>
-        </div>
-    </div>          
     @endif
-    @if ($errors->any())
-    <div class="row justify-content-center">
+    {{-- @if ($errors->any())
+    <div class="row  alertita">
         <div class="col-3">
-            <div class="alert alert-danger alert-block w-100 text-center">
+            <div class="alert alert-danger alert-block w-100 text-center ">
                 <ul>
                     @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
@@ -28,7 +25,7 @@
             </div>
         </div>
     </div>    
-    @endif
+    @endif --}}
 
     {{-- <div id="scrollmargin"></div> --}}
     <div class="carrousel ">
@@ -251,9 +248,18 @@
 
     <!-- Subventana MIS PEDIDOS -->
     <div id="pedidos"><button id="volver_pedidos"></button>
+        @if(session()->get('user'))
         <h1 class="titulo_pedidos">Completa Tu Pedido</h1>
+        @else
+        <h1 class="titulo_pedidos">Menu</h1>
+        @endif
+        
     <div id="pedidosdespl">
+        @if(!session()->get('user'))
+    <button class="abrir_pedidos" id="mis_pedidos" style="display: none;"></button>
+    @else
     <button class="abrir_pedidos" id="mis_pedidos"></button>
+    @endif
     <div class="cajapedidos">
 
         <h1 class="titulopedidos">Pedidos de {{session()->get('user')}}</h1>
@@ -414,7 +420,11 @@
     @endforeach --}}
 </div>
 <div id="despcesta">
+    @if(session()->get('user'))
 <button id="ver_cesta">ver cesta</button>
+@else
+<button id="ver_cesta" style="display: none;">ver cesta</button>
+@endif
     <form action="{{route('mandar_pedido')}}" method="post" id="cesta">
         @csrf
         <!-- <input type="hidden" name="id_user" value="{{session()->get('id_user')}}">
@@ -437,7 +447,11 @@
         @endif
 
         <div id="sugerencias">
-                    <button class="abrir_sugerencias" id="btn_sugerencias"></button>
+            @if(session()->get('user'))
+            <button class="abrir_sugerencias" id="btn_sugerencias"></button>
+            @else
+            <button class="abrir_sugerencias" id="btn_sugerencias" style="display:none;"></button>
+            @endif
                     <div class="formulario_sugerencias">
                         <h2>Formulario Sugerencias</h2>
                         <form action="{{route('añadir_sugerencia')}}" method="post">
@@ -456,6 +470,7 @@
                         </form>
                     </div>
         </div>
+
         @if(!session()->get('user'))
         <div class="row ventanalogin">
             

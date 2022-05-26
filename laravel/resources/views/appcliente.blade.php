@@ -76,7 +76,7 @@
                 </div>
             </div>
     </header>
-    @if ($message = Session::get('error'))
+    {{-- @if ($message = Session::get('error'))
     <div class="row justify-content-center">
         <div class="col-3">
                     <div class="alert alert-danger  alert-block w-100 text-center">   
@@ -84,7 +84,7 @@
                     </div>
         </div>
     </div>          
-    @endif
+    @endif --}}
     @if ($errors->any())
     <div class="row justify-content-center">
         <div class="col-3">

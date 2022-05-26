@@ -1024,6 +1024,14 @@ font-size: 20px;
     /* transition: 0.5s ease all; */
     z-index: 999 !important;
 }
+.alertita{
+    position: absolute !important;
+    top: 200px;
+    left: 200px;
+    width: 500px !important;
+    height: 100px;
+    z-index: 9999;
+}
 #abrir_pedidos {
     position: fixed;
     top: 100%;
@@ -1047,7 +1055,7 @@ font-size: 20px;
     background-size: cover;
     background-position: center;
     transform: translateY(-99%);
-    transition: 1s ease all;
+    /* transition: 1s ease all; */
     z-index: 1;
 }
 #btn_inicio_sesion {
