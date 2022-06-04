@@ -178,6 +178,19 @@ display: block;
     background-size: contain;
     background-repeat: no-repeat;
 }
+@media (max-width: 1300px) {
+    .gestion_desplegable{
+        position: absolute;
+        display: none;
+        left: 150px;
+        width: 250px;
+        height: 50px;
+        z-index: 9999;
+    }
+    .gestion:hover > .gestion_desplegable{
+    display: block;
+    }
+    }
 @media (max-width: 1450px) {
     .españa{
         position: absolute;

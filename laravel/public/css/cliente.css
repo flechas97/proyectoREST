@@ -1205,7 +1205,36 @@ font-size: 20px;
             width: 476px;
         }
 }
-
+@media (max-width: 1300px) {
+    #abrir_pedidos {
+        position: fixed;
+        top: 100%;
+        left: 23%;
+        height: 200px;
+        width: 200px;
+        background-image: url(nuevocartel.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #36363600;
+        border-style: none;
+    }
+    #btn_inicio_sesion {
+        position: fixed;
+        height: 298px;
+        height: 200px;
+        width: 200px;
+        top: 100%;
+        left: 65%;
+        background-image: url(nuevocartel2.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-color: #36363600;
+        border-style: none;
+        z-index: 0;
+    }
+}
 /*Aqui empieza la resolucion para movil a partir de 500px*/
 @media (max-width: 500px) {
   
