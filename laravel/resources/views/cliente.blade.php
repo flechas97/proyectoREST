@@ -295,16 +295,16 @@
         <!-- <button id="ver_cesta"></button> -->
         <div class="productos">
             <div class="row w-100">
-                <div class="col-3">
+                <div class="col-12 col-lg-3">
                     <h1 class="text-center menu_plato" id="btn_primeros">Primeros</h1>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-lg-3">
                     <h1 class="text-center menu_plato" id="btn_segundos">Segundos</h1>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-lg-3">
                     <h1 class="text-center menu_plato" id="btn_postres">Postres</h1>
                 </div>
-                <div class="col-3">
+                <div class="col-12 col-lg-3">
                     <h1 class="text-center menu_plato" id="btn_bebidas">Bebidas</h1>
                 </div>
             </div>

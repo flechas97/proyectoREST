@@ -373,6 +373,7 @@ margin-bottom: 150px;
 }
 #primeros, #segundos, #postres, #bebidas{
     display: flex;
+    flex-wrap: wrap;
 }
 .menu_plato{
     font-size: 20px;
@@ -416,7 +417,7 @@ margin-bottom: 150px;
     position: relative;
     left: 5%;
     position: relative;
-    z-index: 500;
+    z-index: 99;
 }
 .btn_mav{
     margin-top: 22px;
@@ -936,8 +937,8 @@ font-size: 20px;
     transform: translateX(-99.9%);
     transition: 0.5s ease all;
     /* background-color: red; */
-    background-image: url('papel.jpg');
-    background-size: contain;
+    background-image: url('fondo_pedir.jpg');
+    background-size: cover;
     background-position: center;
     /* overflow: scroll; */
     z-index: 999 !important;
@@ -976,8 +977,8 @@ font-size: 20px;
     width: 100%;
     transform: translateX(99%);
     transition: 1s ease all;
-    background-image: url('papel.jpg');
-    background-size: contain;
+    background-image: url('fondo_pedir.jpg');
+    background-size: cover;
     background-position: center;
     z-index: 999;
 }
@@ -1396,7 +1397,7 @@ font-size: 20px;
         right: 0;
         transition: 1s ease all;
         transform: translateX(0%);
-        z-index: 0 !important;
+        z-index: 100 !important;
     }
     #btn_inicio_sesion {
         position: fixed;
@@ -1421,7 +1422,7 @@ font-size: 20px;
         transform: translateX(-99%);
         transition: 1s ease all;
         /* background-color: red; */
-        background-image: url('papel.jpg');
+        background-image: url('fondo_pedir.jpg');
         background-size: 200% 200%;
         background-position: left;
         /* overflow: scroll; */

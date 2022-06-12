@@ -23,14 +23,15 @@ for (let i = 0; i < addcesta.length; i++) {
     addcesta[i].style.display = "none";
     addproducto[i].addEventListener("click",()=>{
         añadido[i].style.display = "block"
-        console.log(addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent)
+        // console.log(addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent)
         var producto = addcesta[i].parentNode.parentNode.childNodes[3].childNodes[1].textContent;
         var precio = addcesta[i].parentNode.parentNode.childNodes[5].childNodes[1].textContent;
         var guardarlocal= [];
         if(!localStorage.getItem(producto)){
             localStorage.setItem(producto,0)
         
-        cantidad=parseInt(JSON.parse(localStorage.getItem(producto))[2]);
+        var cantidad=parseInt(JSON.parse(localStorage.getItem(producto))[2]);
+        // console.log(producto)
         cantidad++;
         if(!cantidad){
             guardarlocal.push(producto,precio,1);
@@ -301,7 +302,7 @@ function calculartotal() {
     for (let i = 0; i < localStorage.length; i++) {
         var productototal = JSON.parse(localStorage.getItem(localStorage.key(i)));
         total += parseFloat(productototal[1])*parseFloat(productototal[2]);
-        console.log(total)
+        // console.log(total)
     }
     totalcesta.innerHTML = total+"€";
     totaltotal.value = total;
