@@ -7,4 +7,5 @@
 @section('content')
 
 <h1>Pedido Completado</h1>
+<a href="{{route('client')}}"><button>Continuar</button></a>
 @endsection 

@@ -417,7 +417,7 @@ margin-bottom: 150px;
     position: relative;
     left: 5%;
     position: relative;
-    z-index: 99;
+    z-index: 999;
 }
 .btn_mav{
     margin-top: 22px;
@@ -810,7 +810,7 @@ margin-bottom: 150px;
      background: transparent; */
      background-image: url('fondoseccion.png'); 
   
-    background-size: 100%;
+    background-size: auto;
      background-position: center;
      box-shadow: 0px 0px 20px 20px black;
      /* background-color: red; */
@@ -827,8 +827,10 @@ margin-bottom: 150px;
     border-radius: 8px;
     padding: 10px;
 }
+
 .blob{
     width: 700px;
+         margin-top: 0px !important;
 }
 .bannerregalo{
     width: 65%;
@@ -851,6 +853,13 @@ font-size: 20px;
     padding: 10px 15px;
 }
 @media (max-width: 1500px) {
+    .contenidoregalo{
+        margin-top: 250px;
+        background-color: rgba(59, 59, 59, 0.233);
+        border-radius: 8px;
+        padding: 10px;
+        margin-left: 0px;
+    }
     .bannerregalo{
         width: 70%;
         margin: auto;
@@ -872,7 +881,7 @@ font-size: 20px;
         padding: 10px 15px;
     }
 }
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
     .bannerregalo{
         width: 100%;
         margin: auto;
@@ -880,6 +889,14 @@ font-size: 20px;
     .blob{
         width: 400px;
         margin-left: 20%;
+        margin-top: 180px;
+    }
+    .contenidoregalo{
+        margin-top: 250px;
+        background-color: rgba(59, 59, 59, 0.233);
+        border-radius: 8px;
+        padding: 10px;
+        margin-left: 0px !important ; 
     }
     .titulotarjetaregalo{
         margin-top: 0.5em;

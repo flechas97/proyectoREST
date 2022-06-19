@@ -120,10 +120,10 @@
 
     <section class="tarjetaregalo">
         <div class="row bannerregalo">
-            <div class="col-lg-6 col-12 col-sm-12 ">
+            <div class="col-lg-6 col-12 col-sm-12 col-md-12 ">
                 <img src="{{URL::asset('css/blob.png')}}" alt="" class="blob">
             </div>
-            <div class="col-lg-6 col-12 col-sm-12 text-center">
+            <div class="col-lg-6 col-12 col-sm-12 col-md-12 text-center">
                 <div class="contenidoregalo">
                     <h1 class="titulotarjetaregalo">Tarjeta regalo</h1>
                     <p class="textotarjetaregalo">Presenta una tarjeta regalo a tu familia o amigos!</p>
